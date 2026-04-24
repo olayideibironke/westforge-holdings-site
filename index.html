@@ -4,221 +4,280 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Westforge Holdings Inc.</title>
+  <meta name="description" content="Westforge Holdings Inc. official website. Premium ventures. Professional brands. Official website coming soon." />
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #11182d;
+      --card: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.12);
+      --text: #eef2ff;
+      --muted: #b7c0da;
+      --accent: #7fb3ff;
+      --accent-strong: #4e8fff;
+      --shadow: 0 24px 80px rgba(0,0,0,0.45);
     }
 
-    :root {
-      --bg-1: #081327;
-      --bg-2: #030a17;
-      --card-1: rgba(20, 33, 58, 0.92);
-      --card-2: rgba(8, 16, 31, 0.94);
-      --line: rgba(255, 255, 255, 0.08);
-      --text: #f3f7ff;
-      --muted: #b7c2d9;
-      --accent: #78a9ff;
-      --accent-2: #4b83ff;
-      --premium-1: #7fb2ff;
-      --premium-2: #4d86ff;
-      --premium-3: #1f4fd4;
-      --button-dark: rgba(255, 255, 255, 0.06);
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-    }
+    * { box-sizing: border-box; }
 
     body {
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(91, 139, 255, 0.18), transparent 28%),
-        radial-gradient(circle at top right, rgba(36, 89, 214, 0.18), transparent 30%),
-        linear-gradient(135deg, var(--bg-1), var(--bg-2) 60%, #020814);
-      color: var(--text);
+      margin: 0;
       min-height: 100vh;
-      padding: 36px 20px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(127, 179, 255, 0.18), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(78, 143, 255, 0.14), transparent 28%),
+        linear-gradient(180deg, #09101f 0%, #0b1020 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 18px;
     }
 
     .shell {
-      max-width: 1320px;
-      margin: 0 auto;
+      width: 100%;
+      max-width: 1080px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border: 1px solid var(--border);
       border-radius: 28px;
       overflow: hidden;
-      background:
-        linear-gradient(180deg, rgba(31, 48, 84, 0.94), rgba(8, 16, 31, 0.96));
-      border: 1px solid rgba(255, 255, 255, 0.08);
       box-shadow: var(--shadow);
       backdrop-filter: blur(12px);
     }
 
     .topbar {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 20px;
-      padding: 28px 36px;
-      border-bottom: 1px solid var(--line);
-      background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+      padding: 22px 28px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 14px;
       min-width: 0;
     }
 
-    .logo-wrap {
-      width: 72px;
-      height: 72px;
-      border-radius: 18px;
-      overflow: hidden;
-      flex-shrink: 0;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.04);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
-    }
-
-    .logo-wrap img {
-      width: 100%;
-      height: 100%;
+    .crest {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
       object-fit: cover;
       display: block;
-    }
-
-    .brand-text h1 {
-      font-size: 17px;
-      letter-spacing: 2px;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-      white-space: nowrap;
-    }
-
-    .brand-text p {
-      color: var(--muted);
-      letter-spacing: 2.8px;
-      font-size: 13px;
-      text-transform: uppercase;
-    }
-
-    .premium-ribbon {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.28);
+      border: 1px solid rgba(127,179,255,0.22);
       flex-shrink: 0;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brand-text strong {
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-text span {
+      color: var(--muted);
+      font-size: 0.84rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .status {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      padding: 14px 22px;
+      justify-content: center;
+      padding: 12px 20px;
       border-radius: 999px;
-      background:
-        linear-gradient(135deg, rgba(127,178,255,0.18), rgba(77,134,255,0.32)),
-        linear-gradient(135deg, var(--premium-1), var(--premium-3));
-      border: 1px solid rgba(145, 190, 255, 0.28);
-      box-shadow:
-        0 10px 28px rgba(41, 94, 224, 0.26),
-        inset 0 1px 0 rgba(255,255,255,0.2);
-      color: #9fc1ff;
-      font-size: 14px;
-      font-weight: 900;
-      letter-spacing: 1.7px;
+      background: linear-gradient(135deg, rgba(127,179,255,0.16), rgba(78,143,255,0.28));
+      border: 1px solid rgba(127,179,255,0.32);
+      color: #a9c9ff;
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
+      box-shadow:
+        0 10px 24px rgba(78, 143, 255, 0.18),
+        inset 0 1px 0 rgba(255,255,255,0.14);
       white-space: nowrap;
-    }
-
-    .premium-ribbon::before {
-      content: "◆";
-      font-size: 12px;
-      opacity: 0.95;
     }
 
     .hero {
-      padding: 72px 32px 72px;
+      padding: 76px 28px 58px;
       text-align: center;
-      background:
-        radial-gradient(circle at center, rgba(46, 90, 215, 0.12), transparent 38%),
-        linear-gradient(180deg, rgba(9, 20, 40, 0.35), rgba(8, 16, 31, 0.1));
     }
 
-    .welcome-pill {
+    .eyebrow {
       display: inline-block;
-      padding: 14px 28px;
+      padding: 10px 16px;
       border-radius: 999px;
-      border: 1px solid rgba(120, 169, 255, 0.24);
-      background: rgba(120, 169, 255, 0.08);
-      color: #dce8ff;
-      letter-spacing: 2px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      font-weight: 800;
-      margin-bottom: 34px;
-      font-size: 14px;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+      color: #dce8ff;
+      background: rgba(127,179,255,0.1);
+      border: 1px solid rgba(127,179,255,0.2);
     }
 
-    .hero h2 {
-      max-width: 980px;
-      margin: 0 auto 28px;
-      font-size: clamp(44px, 7vw, 86px);
-      line-height: 0.98;
-      font-weight: 900;
-      letter-spacing: -2px;
+    h1 {
+      margin: 22px auto 18px;
+      max-width: 760px;
+      font-size: clamp(2.3rem, 6vw, 4.2rem);
+      line-height: 1.06;
+      letter-spacing: -0.04em;
     }
 
-    .hero p {
-      max-width: 980px;
+    .lead {
       margin: 0 auto;
+      max-width: 760px;
       color: var(--muted);
-      font-size: clamp(18px, 2.3vw, 23px);
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      line-height: 1.8;
+    }
+
+    .cta-row {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 185px;
+      padding: 14px 20px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.18s ease, opacity 0.18s ease, border-color 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: linear-gradient(180deg, var(--accent), var(--accent-strong));
+      color: #061021;
+      box-shadow: 0 16px 40px rgba(78, 143, 255, 0.28);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      padding: 0 28px 28px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+    }
+
+    .card h2 {
+      margin: 0 0 12px;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .brands {
+      padding: 0 28px 36px;
+    }
+
+    .brands-wrap {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 26px;
+    }
+
+    .brands-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .brands-head h2 {
+      margin: 0;
+      font-size: 1.35rem;
+    }
+
+    .brands-head p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      max-width: 680px;
       line-height: 1.8;
     }
 
     .brand-links {
-      margin-top: 44px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
     }
 
-    .brand-links a {
-      min-width: 220px;
+    .brand-link {
+      display: block;
       text-decoration: none;
-      text-align: center;
-      padding: 20px 28px;
-      border-radius: 20px;
-      font-size: 17px;
-      font-weight: 800;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-      border: 1px solid rgba(255,255,255,0.1);
-      color: #eff5ff;
-      background: var(--button-dark);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+      color: var(--text);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     }
 
-    .brand-links a.primary {
-      color: #06101f;
-      background: linear-gradient(135deg, #93bbff, #4d8aff);
-      border-color: rgba(147, 187, 255, 0.55);
-      box-shadow: 0 18px 40px rgba(77, 138, 255, 0.3);
-    }
-
-    .brand-links a.secondary {
-      background: rgba(255,255,255,0.05);
-    }
-
-    .brand-links a.tertiary {
-      background: rgba(255,255,255,0.05);
-    }
-
-    .brand-links a:hover {
+    .brand-link:hover {
       transform: translateY(-2px);
-      box-shadow: 0 16px 38px rgba(0,0,0,0.3);
+      border-color: rgba(127,179,255,0.35);
+      background: rgba(127,179,255,0.06);
     }
 
-    .footer-space {
-      height: 24px;
+    .brand-link strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .brand-link span {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      padding: 0 28px 28px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
     }
 
     @media (max-width: 980px) {
@@ -227,99 +286,124 @@
         align-items: flex-start;
       }
 
-      .premium-ribbon {
-        align-self: flex-start;
-      }
-
-      .hero {
-        padding: 56px 24px 64px;
+      .cta-row {
+        flex-wrap: wrap;
       }
     }
 
-    @media (max-width: 640px) {
-      body {
-        padding: 18px 12px;
-      }
-
-      .shell {
-        border-radius: 22px;
-      }
-
-      .topbar {
-        padding: 20px 18px;
+    @media (max-width: 820px) {
+      .grid,
+      .brand-links {
+        grid-template-columns: 1fr;
       }
 
       .hero {
-        padding: 42px 18px 48px;
+        padding-top: 60px;
       }
 
-      .brand {
-        align-items: flex-start;
+      .topbar,
+      .hero,
+      .grid,
+      .brands,
+      footer {
+        padding-left: 18px;
+        padding-right: 18px;
       }
 
-      .logo-wrap {
-        width: 62px;
-        height: 62px;
+      .cta-row {
+        flex-direction: column;
+        align-items: center;
       }
 
-      .brand-text h1 {
-        font-size: 15px;
-        white-space: normal;
-      }
-
-      .brand-text p {
-        font-size: 12px;
-      }
-
-      .premium-ribbon {
-        font-size: 12px;
-        letter-spacing: 1.3px;
-        padding: 12px 18px;
-      }
-
-      .brand-links a {
+      .btn {
         width: 100%;
-        min-width: unset;
+        max-width: 320px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="shell">
-    <div class="topbar">
+  <main class="shell">
+    <header class="topbar">
       <div class="brand">
-        <div class="logo-wrap">
-          <!-- If your logo filename is different, replace westforge-logo.png with your actual file name -->
-          <img src="westforge-logo.png" alt="Westforge Holdings Inc. Logo" />
-        </div>
+        <img class="crest" src="westforge-logo.png" alt="Westforge Holdings Inc. logo" />
         <div class="brand-text">
-          <h1>Westforge Holdings Inc.</h1>
-          <p>Parent Company</p>
+          <strong>WESTFORGE HOLDINGS INC.</strong>
+          <span>PARENT COMPANY</span>
         </div>
       </div>
-
-      <div class="premium-ribbon">Official Website Coming Soon</div>
-    </div>
+      <div class="status">Official Website Coming Soon</div>
+    </header>
 
     <section class="hero">
-      <div class="welcome-pill">Welcome</div>
-
-      <h2>Welcome to Westforge Holdings Inc.</h2>
-
-      <p>
-        Westforge Holdings Inc. is the parent company behind a growing portfolio of modern,
-        purpose-driven ventures. Our official website is currently in development. In the meantime,
-        you may explore our active brands below.
+      <div class="eyebrow">Welcome</div>
+      <h1>Welcome to Westforge Holdings Inc.</h1>
+      <p class="lead">
+        Westforge Holdings Inc. is the parent company behind a growing portfolio of modern, purpose-driven ventures.
+        Our official website is currently in development. In the meantime, you may explore selected active brands below.
       </p>
-
-      <div class="brand-links">
-        <a class="primary" href="https://www.fuseharbor.org" target="_blank" rel="noopener noreferrer">Visit FuseHarbor</a>
-        <a class="secondary" href="https://www.spinbookhq.com" target="_blank" rel="noopener noreferrer">Visit SpinBook HQ</a>
-        <a class="tertiary" href="https://www.medicaidready.org" target="_blank" rel="noopener noreferrer">Visit MedicaidReady</a>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://www.fuseharbor.org" target="_blank" rel="noopener noreferrer">Visit FuseHarbor</a>
+        <a class="btn btn-secondary" href="https://www.spinbookhq.com" target="_blank" rel="noopener noreferrer">Visit SpinBook HQ</a>
+        <a class="btn btn-secondary" href="https://www.medicaidready.org" target="_blank" rel="noopener noreferrer">Visit MedicaidReady</a>
       </div>
     </section>
 
-    <div class="footer-space"></div>
-  </div>
+    <section class="grid">
+      <article class="card">
+        <h2>Professional. Clean. Forward-Looking.</h2>
+        <p>
+          Westforge is being built with a long-term focus on premium brands, disciplined execution, and scalable digital businesses.
+          This landing page serves as a simple public presence while the full corporate site is prepared.
+        </p>
+      </article>
+      <article class="card">
+        <h2>Built for a Growing Portfolio</h2>
+        <p>
+          As our businesses continue to expand, Westforge Holdings Inc. will serve as the central umbrella supporting new ventures,
+          strategic growth, and brand development across multiple sectors.
+        </p>
+      </article>
+    </section>
+
+    <section class="brands">
+      <div class="brands-wrap">
+        <div class="brands-head">
+          <div>
+            <h2>Featured Businesses</h2>
+            <p>
+              Explore active Westforge portfolio brands with live public websites.
+            </p>
+          </div>
+        </div>
+
+        <div class="brand-links">
+          <a class="brand-link" href="https://www.fuseharbor.org" target="_blank" rel="noopener noreferrer">
+            <strong>FuseHarbor</strong>
+            <span>Premium home electrification marketplace and quote-request platform.</span>
+          </a>
+
+          <a class="brand-link" href="https://www.spinbookhq.com" target="_blank" rel="noopener noreferrer">
+            <strong>SpinBook HQ</strong>
+            <span>DJ marketplace connecting clients with professional DJ talent for events.</span>
+          </a>
+
+          <a class="brand-link" href="https://www.medicaidready.org" target="_blank" rel="noopener noreferrer">
+            <strong>MedicaidReady</strong>
+            <span>Medicaid-focused platform supporting application readiness, guidance, and related support services.</span>
+          </a>
+
+          <a class="brand-link" href="#" onclick="return false;">
+            <strong>More Brands Coming Soon</strong>
+            <span>Additional Westforge ventures will be added here as they become publicly available.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2026 Westforge Holdings Inc. All rights reserved.
+    </footer>
+  </main>
 </body>
 </html>
