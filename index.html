@@ -448,6 +448,254 @@
     .orbit-chip.three { bottom: 90px; left: 26px; --chip-color: var(--gold); }
     .orbit-chip.four { bottom: 43px; right: 42px; --chip-color: var(--teal); }
 
+
+
+    /* Rotating hero product showcase */
+    .product-hero {
+      display: block;
+      padding: 30px;
+    }
+
+    .product-hero::before {
+      width: 420px;
+      height: 420px;
+      animation: slowOrbit 18s linear infinite;
+    }
+
+    .product-hero::after {
+      width: 300px;
+      height: 300px;
+      animation: slowOrbitReverse 22s linear infinite;
+    }
+
+    .product-hero-inner {
+      position: relative;
+      z-index: 4;
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 30px;
+      border: 1px solid rgba(183, 202, 237, 0.15);
+      border-radius: 26px;
+      background:
+        linear-gradient(145deg, rgba(8, 13, 28, 0.86), rgba(4, 7, 16, 0.74));
+      box-shadow: 0 18px 50px rgba(0,0,0,0.28);
+      backdrop-filter: blur(18px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .product-hero-inner.is-changing {
+      opacity: 0;
+      transform: translateY(10px) scale(0.985);
+    }
+
+    .product-hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 18px;
+      color: var(--blue-300);
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .product-hero-kicker::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px rgba(81, 197, 139, 0.9);
+    }
+
+    .product-hero-number {
+      position: absolute;
+      top: 28px;
+      right: 30px;
+      color: var(--silver-400);
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .product-hero-sector {
+      margin-bottom: 12px;
+      color: var(--gold);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .product-hero-name {
+      max-width: 470px;
+      margin-bottom: 14px;
+      color: var(--white);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.35rem, 4.8vw, 4.25rem);
+      font-weight: 600;
+      letter-spacing: -0.035em;
+      line-height: 0.95;
+    }
+
+    .product-hero-description {
+      max-width: 480px;
+      color: var(--silver-300);
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    .product-hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .product-hero-tags span {
+      min-height: 28px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 9px;
+      border: 1px solid rgba(117, 166, 255, 0.22);
+      border-radius: 8px;
+      background: rgba(117, 166, 255, 0.06);
+      color: var(--silver-200);
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .product-hero-link {
+      width: max-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      color: var(--blue-300);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .product-hero-link::after {
+      content: "↗";
+      font-size: 0.95rem;
+    }
+
+    .product-dots {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 18px;
+    }
+
+    .product-dot {
+      width: 8px;
+      height: 8px;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(168, 184, 211, 0.28);
+      cursor: pointer;
+      transition: width 0.25s ease, background 0.25s ease;
+    }
+
+    .product-dot.active {
+      width: 24px;
+      background: var(--blue-300);
+      box-shadow: 0 0 14px rgba(117, 166, 255, 0.5);
+    }
+
+    .product-marquee {
+      position: relative;
+      z-index: 4;
+      overflow: hidden;
+      margin-top: 18px;
+      border: 1px solid rgba(183, 202, 237, 0.1);
+      border-radius: 999px;
+      background: rgba(3, 5, 13, 0.5);
+      mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+    }
+
+    .product-track {
+      display: flex;
+      width: max-content;
+      gap: 10px;
+      padding: 10px 0;
+      animation: productMarquee 30s linear infinite;
+    }
+
+    .product-track span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 11px;
+      border: 1px solid rgba(183, 202, 237, 0.1);
+      border-radius: 999px;
+      color: var(--silver-300);
+      font-size: 0.67rem;
+      font-weight: 700;
+      white-space: nowrap;
+      background: rgba(255,255,255,0.025);
+    }
+
+    .product-track span::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blue-300);
+    }
+
+    .product-progress {
+      position: relative;
+      z-index: 5;
+      height: 3px;
+      margin-top: 18px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(183, 202, 237, 0.1);
+    }
+
+    .product-progress span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--blue-500), var(--blue-300), var(--purple));
+      animation: productProgress 4.2s linear infinite;
+    }
+
+    @keyframes productMarquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @keyframes productProgress {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+
+    @keyframes slowOrbit {
+      from { transform: rotate(0deg) scale(1); }
+      to { transform: rotate(360deg) scale(1); }
+    }
+
+    @keyframes slowOrbitReverse {
+      from { transform: rotate(360deg) scale(1); }
+      to { transform: rotate(0deg) scale(1); }
+    }
+
     .metrics {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1110,6 +1358,25 @@
         height: 156px;
       }
 
+
+      .product-hero {
+        padding: 22px;
+      }
+
+      .product-hero-inner {
+        min-height: 310px;
+        padding: 24px;
+      }
+
+      .product-hero-number {
+        position: static;
+        margin-bottom: 12px;
+      }
+
+      .product-hero-name {
+        font-size: clamp(2.1rem, 10vw, 3.3rem);
+      }
+
       .orbit-chip {
         font-size: 0.61rem;
       }
@@ -1160,6 +1427,25 @@
 
       .hero-panel {
         min-height: 350px;
+      }
+
+
+      .product-hero {
+        padding: 18px;
+      }
+
+      .product-hero-inner {
+        min-height: 300px;
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .product-hero-description {
+        font-size: 0.84rem;
+      }
+
+      .product-track span {
+        font-size: 0.62rem;
       }
 
       .orbit-chip {
@@ -1294,12 +1580,32 @@
             </div>
           </div>
 
-          <div class="hero-panel" aria-label="Westforge portfolio highlights">
-            <span class="orbit-chip one">Home &amp; Aging</span>
-            <span class="orbit-chip two">Civic Workflow</span>
-            <span class="orbit-chip three">Health &amp; Careers</span>
-            <span class="orbit-chip four">Beauty Tech</span>
-            <img class="hero-logo" src="data:image/webp;base64,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" alt="Westforge Holdings Inc." />
+          <div class="hero-panel product-hero" aria-label="Rotating Westforge product showcase">
+            <div class="product-hero-inner" id="product-hero-card">
+              <div class="product-hero-number" id="product-hero-number">01 / 11</div>
+              <p class="product-hero-kicker">Now in the Portfolio</p>
+              <p class="product-hero-sector" id="product-hero-sector">Home Electrification</p>
+              <h2 class="product-hero-name" id="product-hero-name">FuseHarbor</h2>
+              <p class="product-hero-description" id="product-hero-description">
+                A structured marketplace helping homeowners begin EV charger, electrical panel,
+                heat pump, and backup-power projects with greater clarity, trust, and organization.
+              </p>
+              <div class="product-hero-tags" id="product-hero-tags">
+                <span>Web Platform</span>
+                <span>Mobile App</span>
+              </div>
+              <a class="product-hero-link" id="product-hero-link" href="https://www.fuseharbor.org" target="_blank" rel="noopener noreferrer">View Product</a>
+            </div>
+
+            <div class="product-marquee" aria-hidden="true">
+              <div class="product-track">
+                <span>FuseHarbor</span><span>Keyvera</span><span>MedicaidReady</span><span>MedicaidReady Careers</span><span>HarborAging</span><span>ReliefBridge</span><span>CivicFlow</span><span>ProstateWise</span><span>CrownLens</span><span>AfricanKidSpeaks</span><span>SpinBook HQ</span>
+                <span>FuseHarbor</span><span>Keyvera</span><span>MedicaidReady</span><span>MedicaidReady Careers</span><span>HarborAging</span><span>ReliefBridge</span><span>CivicFlow</span><span>ProstateWise</span><span>CrownLens</span><span>AfricanKidSpeaks</span><span>SpinBook HQ</span>
+              </div>
+            </div>
+
+            <div class="product-dots" id="product-hero-dots" aria-label="Product rotation controls"></div>
+            <div class="product-progress" aria-hidden="true"><span></span></div>
           </div>
         </div>
 
@@ -1813,6 +2119,144 @@
   <script>
     const menuButton = document.getElementById("menu-button");
     const navLinks = document.getElementById("nav-links");
+
+
+    const heroProducts = [
+      {
+        name: "FuseHarbor",
+        sector: "Home Electrification",
+        description: "A structured marketplace helping homeowners begin EV charger, electrical panel, heat pump, and backup-power projects with greater clarity, trust, and organization.",
+        tags: ["Web Platform", "Mobile App"],
+        url: "https://www.fuseharbor.org"
+      },
+      {
+        name: "Keyvera",
+        sector: "Property Technology",
+        description: "A Lagos-focused property marketplace built around verified roles, professional listings, structured inspections, transparent fees, and operational oversight.",
+        tags: ["Web Platform", "Property Marketplace"],
+        url: "https://www.keyvera.org"
+      },
+      {
+        name: "MedicaidReady",
+        sector: "Health Access",
+        description: "A free nationwide screening tool that helps individuals and families understand whether they may qualify for Medicaid before beginning an official state application.",
+        tags: ["50 States + D.C.", "Mobile App"],
+        url: "https://www.medicaidready.org"
+      },
+      {
+        name: "MedicaidReady Careers",
+        sector: "Workforce & Careers",
+        description: "A career-support platform built to help people prepare for real jobs, improve readiness, and move toward practical employment opportunities.",
+        tags: ["Career Support", "Job Readiness"],
+        url: "https://www.medicaidready.org/careers"
+      },
+      {
+        name: "HarborAging",
+        sector: "Aging in Place",
+        description: "A family-centered platform for organizing home-safety needs, aging-in-place modifications, provider coordination, service requests, and project progress.",
+        tags: ["Web Platform", "iOS + Android"],
+        url: "https://www.harboraging.com"
+      },
+      {
+        name: "ReliefBridge",
+        sector: "Disaster Recovery",
+        description: "A national recovery-coordination platform for survivor cases, referrals, partner capacity, services, and recovery activity in one structured workspace.",
+        tags: ["Case Management", "Referral Exchange"],
+        url: "https://www.reliefbridge.net"
+      },
+      {
+        name: "CivicFlow",
+        sector: "Civic Workflow SaaS",
+        description: "A professional case, intake, workflow, and reporting platform built for civic, public-service, and organizational operations.",
+        tags: ["SaaS", "Reports + Workflows"],
+        url: "https://www.civicflowapp.org"
+      },
+      {
+        name: "ProstateWise",
+        sector: "Men's Health Awareness",
+        description: "A prostate health awareness platform focused on early-risk education, PSA reminders, doctor conversations, and practical next-step guidance.",
+        tags: ["Awareness", "Health Education"],
+        url: "https://www.prostatewise.org"
+      },
+      {
+        name: "CrownLens",
+        sector: "Beauty Technology",
+        description: "A mobile visual-check tool that helps wig and hair-extension buyers review visible quality concerns before purchase using uploaded photos or seller listings.",
+        tags: ["iOS + Android", "AI Visual Report"],
+        url: "#portfolio"
+      },
+      {
+        name: "AfricanKidSpeaks",
+        sector: "Education & Culture",
+        description: "A kid-friendly African language-learning app helping children and families explore Yoruba, Igbo, and Nigerian Pidgin through interactive lessons and stories.",
+        tags: ["iOS + Android", "Language Learning"],
+        url: "https://apps.apple.com/us/app/africankidspeaks/id6759928644"
+      },
+      {
+        name: "SpinBook HQ",
+        sector: "Events & Entertainment",
+        description: "A modern DJ marketplace connecting clients with professional talent for private events, celebrations, corporate functions, and productions of every scale.",
+        tags: ["Marketplace", "Event Services"],
+        url: "https://www.spinbookhq.com"
+      }
+    ];
+
+    const productCard = document.getElementById("product-hero-card");
+    const productNumber = document.getElementById("product-hero-number");
+    const productSector = document.getElementById("product-hero-sector");
+    const productName = document.getElementById("product-hero-name");
+    const productDescription = document.getElementById("product-hero-description");
+    const productTags = document.getElementById("product-hero-tags");
+    const productLink = document.getElementById("product-hero-link");
+    const productDots = document.getElementById("product-hero-dots");
+    let activeProductIndex = 0;
+    let productRotationTimer;
+
+    function renderProduct(index) {
+      const product = heroProducts[index];
+      productCard.classList.add("is-changing");
+
+      window.setTimeout(() => {
+        productNumber.textContent = `${String(index + 1).padStart(2, "0")} / ${heroProducts.length}`;
+        productSector.textContent = product.sector;
+        productName.textContent = product.name;
+        productDescription.textContent = product.description;
+        productTags.innerHTML = product.tags.map((tag) => `<span>${tag}</span>`).join("");
+        productLink.href = product.url;
+        productLink.textContent = product.url === "#portfolio" ? "View in Portfolio" : "View Product";
+
+        productDots.querySelectorAll("button").forEach((dot, dotIndex) => {
+          dot.classList.toggle("active", dotIndex === index);
+          dot.setAttribute("aria-pressed", String(dotIndex === index));
+        });
+
+        productCard.classList.remove("is-changing");
+      }, 220);
+    }
+
+    function startProductRotation() {
+      window.clearInterval(productRotationTimer);
+      productRotationTimer = window.setInterval(() => {
+        activeProductIndex = (activeProductIndex + 1) % heroProducts.length;
+        renderProduct(activeProductIndex);
+      }, 4200);
+    }
+
+    heroProducts.forEach((product, index) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = `product-dot${index === 0 ? " active" : ""}`;
+      dot.setAttribute("aria-label", `Show ${product.name}`);
+      dot.setAttribute("aria-pressed", String(index === 0));
+      dot.addEventListener("click", () => {
+        activeProductIndex = index;
+        renderProduct(activeProductIndex);
+        startProductRotation();
+      });
+      productDots.appendChild(dot);
+    });
+
+    startProductRotation();
 
     menuButton.addEventListener("click", () => {
       const isOpen = navLinks.classList.toggle("open");
