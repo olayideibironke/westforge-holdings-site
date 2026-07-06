@@ -220,16 +220,35 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 13px;
-      border: 1px solid rgba(81, 197, 139, 0.28);
+      padding: 9px 14px;
+      border: 1px solid rgba(195, 163, 108, 0.36);
       border-radius: 999px;
-      background: rgba(81, 197, 139, 0.07);
-      color: #78dda9;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(195, 163, 108, 0.18), transparent 38%),
+        rgba(195, 163, 108, 0.07);
+      color: #f0d49a;
       font-size: 0.67rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.12em;
+      text-decoration: none;
       text-transform: uppercase;
       white-space: nowrap;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .nav-badge:hover,
+    .nav-badge:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(195, 163, 108, 0.58);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(195, 163, 108, 0.28), transparent 42%),
+        rgba(195, 163, 108, 0.1);
+      color: var(--white);
     }
 
     .nav-badge::before {
@@ -237,8 +256,8 @@
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 12px rgba(81, 197, 139, 0.9);
+      background: var(--gold);
+      box-shadow: 0 0 12px rgba(195, 163, 108, 0.9);
     }
 
     .menu-button {
@@ -1530,10 +1549,11 @@
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#mobile">Mobile Apps</a></li>
         <li><a href="#principles">Principles</a></li>
+        <li><a href="#partner">Partner</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <span class="nav-badge">Active Portfolio</span>
+      <a class="nav-badge" href="#partner">Partner with Westforge</a>
 
       <button
         class="menu-button"
@@ -1576,6 +1596,9 @@
               </a>
               <a class="button button-secondary" href="#mobile">
                 View Mobile Products
+              </a>
+              <a class="button button-secondary" href="#partner">
+                Partner with Westforge
               </a>
             </div>
           </div>
@@ -2076,14 +2099,54 @@
       </div>
     </section>
 
+
+    <section id="partner">
+      <div class="container">
+        <div class="contact-panel reveal">
+          <p class="section-kicker">Partnerships &amp; Business Development</p>
+          <h2 class="section-title">Partner with Westforge.</h2>
+          <p class="section-copy">
+            Westforge Holdings Inc. is open to thoughtful partnership conversations with government
+            agencies, corporate teams, private companies, nonprofits, vendors, service providers,
+            investors, and organizations seeking practical digital products, technology collaboration,
+            marketplace partnerships, pilot programs, or portfolio-level business opportunities.
+          </p>
+          <p class="section-copy">
+            We welcome discussions with serious organizations that want to understand who we are,
+            how our products are built, and where our platforms may support real operational,
+            community, commercial, or public-benefit needs. Our approach is professional,
+            direct, and opportunity-focused: define the problem, understand the partnership fit,
+            and explore whether there is a responsible path to work together.
+          </p>
+          <div class="venture-meta" style="margin-top: 28px;">
+            <span class="tag">Government</span>
+            <span class="tag">Corporate</span>
+            <span class="tag">Private Sector</span>
+            <span class="tag">Nonprofit</span>
+            <span class="tag">Vendor Relationships</span>
+            <span class="tag">Strategic Collaboration</span>
+          </div>
+          <div class="hero-actions" style="margin-top: 30px;">
+            <a class="button button-primary" href="mailto:invest@westforgeholdings.com?subject=Westforge%20Partnership%20Inquiry">
+              Start a Partnership Conversation
+            </a>
+            <a class="button button-secondary" href="#portfolio">
+              Review the Portfolio
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="contact">
       <div class="container">
         <div class="contact-panel reveal">
           <p class="section-kicker">Business Inquiries</p>
           <h2 class="section-title">Connect with Westforge Holdings.</h2>
           <p class="section-copy">
-            For partnerships, vendor relationships, corporate verification, and portfolio-related
-            business inquiries, contact the Westforge team.
+            For corporate verification, vendor relationships, portfolio questions, and business
+            inquiries, contact the Westforge team. Partnership conversations can also begin through
+            the Partner with Westforge section above.
           </p>
           <a class="button button-primary" href="mailto:invest@westforgeholdings.com">
             invest@westforgeholdings.com
