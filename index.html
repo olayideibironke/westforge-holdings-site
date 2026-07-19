@@ -1,2357 +1,2358 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Westforge Holdings Inc. | Digital Ventures, SaaS &amp; Mobile Products</title>
-  <meta
-    name="description"
-    content="Westforge Holdings Inc. builds and operates a growing portfolio of digital platforms, SaaS products, public-benefit tools, and mobile apps including FuseHarbor, Keyvera, MedicaidReady, HarborAging, CrownLens, ProstateWise, CivicFlow, ReliefBridge, AfricanKidSpeaks, and SpinBook HQ."
-  />
-  <meta name="theme-color" content="#050814" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="canonical" href="https://www.westforgeholdings.com/" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Westforge Holdings Inc. | Digital Ventures, SaaS &amp; Mobile Products" />
-  <meta
-    property="og:description"
-    content="A growing portfolio of practical platforms and mobile products across home services, property, healthcare access, workforce, disaster recovery, civic workflow, beauty technology, education, and entertainment."
-  />
-  <meta property="og:url" content="https://www.westforgeholdings.com/" />
-  <meta property="og:site_name" content="Westforge Holdings Inc." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --navy-950: #03050d;
-      --navy-900: #050814;
-      --navy-850: #091020;
-      --navy-800: #0c152a;
-      --panel: rgba(11, 18, 38, 0.82);
-      --panel-strong: rgba(12, 21, 43, 0.96);
-      --white: #f7f9ff;
-      --silver-100: #e8eefb;
-      --silver-200: #cad5e9;
-      --silver-300: #a8b8d3;
-      --silver-400: #7f91ae;
-      --blue-300: #75a6ff;
-      --blue-400: #5b8df6;
-      --blue-500: #3f73dc;
-      --gold: #c3a36c;
-      --green: #51c58b;
-      --purple: #9b82ff;
-      --teal: #5ed3cf;
-      --rose: #ef7f9d;
-      --orange: #f0a25e;
-      --border: rgba(183, 202, 237, 0.14);
-      --border-soft: rgba(183, 202, 237, 0.08);
-      --shadow: 0 22px 70px rgba(0, 0, 0, 0.34);
-      --radius-lg: 24px;
-      --radius-md: 16px;
-      --radius-sm: 10px;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 92px;
-    }
-
-    body {
-      min-height: 100vh;
-      overflow-x: hidden;
-      background:
-        radial-gradient(circle at 15% -10%, rgba(63, 115, 220, 0.15), transparent 34%),
-        radial-gradient(circle at 90% 16%, rgba(155, 130, 255, 0.09), transparent 28%),
-        linear-gradient(180deg, var(--navy-950), var(--navy-900) 34%, #040711 100%);
-      color: var(--silver-200);
-      font-family: "Inter", sans-serif;
-      line-height: 1.6;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      pointer-events: none;
-      opacity: 0.22;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
-      background-size: 46px 46px;
-      mask-image: linear-gradient(to bottom, black, transparent 80%);
-    }
-
-    a {
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .container {
-      width: min(1180px, calc(100% - 48px));
-      margin: 0 auto;
-    }
-
-    .skip-link {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 1000;
-      transform: translateY(-160%);
-      padding: 10px 14px;
-      border-radius: 8px;
-      background: var(--white);
-      color: var(--navy-950);
-      font-weight: 700;
-      text-decoration: none;
-      transition: transform 0.2s ease;
-    }
-
-    .skip-link:focus {
-      transform: translateY(0);
-    }
-
-    /* Header */
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      border-bottom: 1px solid var(--border-soft);
-      background: rgba(3, 5, 13, 0.78);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-    }
-
-    .nav {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 13px;
-      text-decoration: none;
-    }
-
-    .brand-logo {
-      width: 44px;
-      height: 44px;
-      border-radius: 11px;
-      border: 1px solid rgba(117, 166, 255, 0.28);
-      box-shadow: 0 0 28px rgba(63, 115, 220, 0.2);
-      object-fit: cover;
-    }
-
-    .brand-copy {
-      display: grid;
-      gap: 1px;
-    }
-
-    .brand-name {
-      color: var(--silver-100);
-      font-family: "Cinzel", serif;
-      font-size: 0.76rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .brand-sub {
-      color: var(--silver-400);
-      font-size: 0.63rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--silver-300);
-      font-size: 0.76rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: var(--white);
-    }
-
-    .nav-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 14px;
-      border: 1px solid rgba(195, 163, 108, 0.36);
-      border-radius: 999px;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(195, 163, 108, 0.18), transparent 38%),
-        rgba(195, 163, 108, 0.07);
-      color: #f0d49a;
-      font-size: 0.67rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-decoration: none;
-      text-transform: uppercase;
-      white-space: nowrap;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
-      transition:
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        background 0.2s ease,
-        color 0.2s ease;
-    }
-
-    .nav-badge:hover,
-    .nav-badge:focus-visible {
-      transform: translateY(-1px);
-      border-color: rgba(195, 163, 108, 0.58);
-      background:
-        radial-gradient(circle at 20% 20%, rgba(195, 163, 108, 0.28), transparent 42%),
-        rgba(195, 163, 108, 0.1);
-      color: var(--white);
-    }
-
-    .nav-badge::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 12px rgba(195, 163, 108, 0.9);
-    }
-
-    .menu-button {
-      display: none;
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--silver-100);
-      cursor: pointer;
-    }
-
-    .menu-button svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 100svh;
-      display: flex;
-      align-items: center;
-      padding: 132px 0 88px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.88fr);
-      gap: 76px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 24px;
-      color: var(--blue-300);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 32px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--blue-300));
-    }
-
-    .hero h1 {
-      max-width: 760px;
-      margin-bottom: 24px;
-      color: var(--white);
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(3.2rem, 7vw, 6.4rem);
-      font-weight: 500;
-      letter-spacing: -0.045em;
-      line-height: 0.96;
-    }
-
-    .hero h1 span {
-      display: block;
-      margin-top: 8px;
-      background: linear-gradient(100deg, var(--silver-100), var(--blue-300) 55%, var(--purple));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-lead {
-      max-width: 670px;
-      color: var(--silver-300);
-      font-size: clamp(1rem, 1.7vw, 1.15rem);
-      font-weight: 300;
-      line-height: 1.85;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 34px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 50px;
-      padding: 0 24px;
-      border: 1px solid transparent;
-      border-radius: 10px;
-      font-size: 0.76rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition:
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        background 0.2s ease,
-        box-shadow 0.2s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
-    .button-primary {
-      background: linear-gradient(135deg, var(--blue-500), var(--blue-400));
-      color: #fff;
-      box-shadow: 0 15px 38px rgba(63, 115, 220, 0.28);
-    }
-
-    .button-primary:hover {
-      box-shadow: 0 18px 45px rgba(63, 115, 220, 0.38);
-    }
-
-    .button-secondary {
-      border-color: var(--border);
-      background: rgba(255,255,255,0.025);
-      color: var(--silver-100);
-    }
-
-    .button-secondary:hover {
-      border-color: rgba(117, 166, 255, 0.38);
-      background: rgba(117, 166, 255, 0.06);
-    }
-
-    .hero-panel {
-      position: relative;
-      min-height: 470px;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: 34px;
-      background:
-        radial-gradient(circle at 50% 40%, rgba(74, 127, 232, 0.18), transparent 37%),
-        linear-gradient(145deg, rgba(14, 24, 48, 0.92), rgba(6, 10, 22, 0.86));
-      box-shadow: var(--shadow);
-    }
-
-    .hero-panel::before,
-    .hero-panel::after {
-      content: "";
-      position: absolute;
-      border: 1px solid rgba(117, 166, 255, 0.12);
-      border-radius: 50%;
-    }
-
-    .hero-panel::before {
-      width: 370px;
-      height: 370px;
-    }
-
-    .hero-panel::after {
-      width: 270px;
-      height: 270px;
-      border-color: rgba(195, 163, 108, 0.15);
-    }
-
-    .hero-logo {
-      position: relative;
-      z-index: 2;
-      width: 196px;
-      height: 196px;
-      object-fit: contain;
-      filter:
-        drop-shadow(0 20px 40px rgba(0, 0, 0, 0.56))
-        drop-shadow(0 0 38px rgba(74, 127, 232, 0.32));
-    }
-
-    .orbit-chip {
-      position: absolute;
-      z-index: 3;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 12px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(5, 8, 20, 0.82);
-      color: var(--silver-200);
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.24);
-      backdrop-filter: blur(14px);
-    }
-
-    .orbit-chip::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--chip-color, var(--blue-300));
-      box-shadow: 0 0 12px color-mix(in srgb, var(--chip-color, var(--blue-300)) 75%, transparent);
-    }
-
-    .orbit-chip.one { top: 52px; left: 42px; --chip-color: var(--green); }
-    .orbit-chip.two { top: 115px; right: 30px; --chip-color: var(--purple); }
-    .orbit-chip.three { bottom: 90px; left: 26px; --chip-color: var(--gold); }
-    .orbit-chip.four { bottom: 43px; right: 42px; --chip-color: var(--teal); }
-
-
-
-    /* Rotating hero product showcase */
-    .product-hero {
-      display: block;
-      padding: 30px;
-    }
-
-    .product-hero::before {
-      width: 420px;
-      height: 420px;
-      animation: slowOrbit 18s linear infinite;
-    }
-
-    .product-hero::after {
-      width: 300px;
-      height: 300px;
-      animation: slowOrbitReverse 22s linear infinite;
-    }
-
-    .product-hero-inner {
-      position: relative;
-      z-index: 4;
-      min-height: 330px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 30px;
-      border: 1px solid rgba(183, 202, 237, 0.15);
-      border-radius: 26px;
-      background:
-        linear-gradient(145deg, rgba(8, 13, 28, 0.86), rgba(4, 7, 16, 0.74));
-      box-shadow: 0 18px 50px rgba(0,0,0,0.28);
-      backdrop-filter: blur(18px);
-      transition: opacity 0.25s ease, transform 0.25s ease;
-    }
-
-    .product-hero-inner.is-changing {
-      opacity: 0;
-      transform: translateY(10px) scale(0.985);
-    }
-
-    .product-hero-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin-bottom: 18px;
-      color: var(--blue-300);
-      font-size: 0.66rem;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .product-hero-kicker::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 12px rgba(81, 197, 139, 0.9);
-    }
-
-    .product-hero-number {
-      position: absolute;
-      top: 28px;
-      right: 30px;
-      color: var(--silver-400);
-      font-size: 0.66rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .product-hero-sector {
-      margin-bottom: 12px;
-      color: var(--gold);
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .product-hero-name {
-      max-width: 470px;
-      margin-bottom: 14px;
-      color: var(--white);
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(2.35rem, 4.8vw, 4.25rem);
-      font-weight: 600;
-      letter-spacing: -0.035em;
-      line-height: 0.95;
-    }
-
-    .product-hero-description {
-      max-width: 480px;
-      color: var(--silver-300);
-      font-size: 0.9rem;
-      font-weight: 300;
-      line-height: 1.75;
-    }
-
-    .product-hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 20px;
-    }
-
-    .product-hero-tags span {
-      min-height: 28px;
-      display: inline-flex;
-      align-items: center;
-      padding: 0 9px;
-      border: 1px solid rgba(117, 166, 255, 0.22);
-      border-radius: 8px;
-      background: rgba(117, 166, 255, 0.06);
-      color: var(--silver-200);
-      font-size: 0.62rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .product-hero-link {
-      width: max-content;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 24px;
-      color: var(--blue-300);
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
-    .product-hero-link::after {
-      content: "↗";
-      font-size: 0.95rem;
-    }
-
-    .product-dots {
-      position: relative;
-      z-index: 5;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 7px;
-      margin-top: 18px;
-    }
-
-    .product-dot {
-      width: 8px;
-      height: 8px;
-      border: 0;
-      border-radius: 999px;
-      background: rgba(168, 184, 211, 0.28);
-      cursor: pointer;
-      transition: width 0.25s ease, background 0.25s ease;
-    }
-
-    .product-dot.active {
-      width: 24px;
-      background: var(--blue-300);
-      box-shadow: 0 0 14px rgba(117, 166, 255, 0.5);
-    }
-
-    .product-marquee {
-      position: relative;
-      z-index: 4;
-      overflow: hidden;
-      margin-top: 18px;
-      border: 1px solid rgba(183, 202, 237, 0.1);
-      border-radius: 999px;
-      background: rgba(3, 5, 13, 0.5);
-      mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
-    }
-
-    .product-track {
-      display: flex;
-      width: max-content;
-      gap: 10px;
-      padding: 10px 0;
-      animation: productMarquee 30s linear infinite;
-    }
-
-    .product-track span {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 7px 11px;
-      border: 1px solid rgba(183, 202, 237, 0.1);
-      border-radius: 999px;
-      color: var(--silver-300);
-      font-size: 0.67rem;
-      font-weight: 700;
-      white-space: nowrap;
-      background: rgba(255,255,255,0.025);
-    }
-
-    .product-track span::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--blue-300);
-    }
-
-    .product-progress {
-      position: relative;
-      z-index: 5;
-      height: 3px;
-      margin-top: 18px;
-      overflow: hidden;
-      border-radius: 999px;
-      background: rgba(183, 202, 237, 0.1);
-    }
-
-    .product-progress span {
-      display: block;
-      height: 100%;
-      border-radius: inherit;
-      background: linear-gradient(90deg, var(--blue-500), var(--blue-300), var(--purple));
-      animation: productProgress 4.2s linear infinite;
-    }
-
-    @keyframes productMarquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    @keyframes productProgress {
-      from { width: 0%; }
-      to { width: 100%; }
-    }
-
-    @keyframes slowOrbit {
-      from { transform: rotate(0deg) scale(1); }
-      to { transform: rotate(360deg) scale(1); }
-    }
-
-    @keyframes slowOrbitReverse {
-      from { transform: rotate(360deg) scale(1); }
-      to { transform: rotate(0deg) scale(1); }
-    }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      margin-top: 26px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: rgba(8, 13, 28, 0.7);
-    }
-
-    .metric {
-      padding: 25px 22px;
-      border-right: 1px solid var(--border-soft);
-    }
-
-    .metric:last-child {
-      border-right: 0;
-    }
-
-    .metric-value {
-      margin-bottom: 5px;
-      color: var(--white);
-      font-family: "Cormorant Garamond", serif;
-      font-size: 2rem;
-      font-weight: 600;
-      line-height: 1;
-    }
-
-    .metric-label {
-      color: var(--silver-400);
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    /* Shared sections */
-    section {
-      position: relative;
-      padding: 104px 0;
-    }
-
-    .section-kicker {
-      margin-bottom: 14px;
-      color: var(--blue-300);
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-    }
-
-    .section-title {
-      max-width: 760px;
-      color: var(--white);
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(2.4rem, 5vw, 4.1rem);
-      font-weight: 500;
-      letter-spacing: -0.03em;
-      line-height: 1.05;
-    }
-
-    .section-copy {
-      max-width: 680px;
-      margin-top: 18px;
-      color: var(--silver-300);
-      font-size: 0.98rem;
-      font-weight: 300;
-      line-height: 1.85;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 36px;
-      margin-bottom: 46px;
-    }
-
-    .section-head .section-copy {
-      max-width: 460px;
-      margin-top: 0;
-    }
-
-    .rule {
-      height: 1px;
-      margin: 0;
-      border: 0;
-      background: linear-gradient(90deg, transparent, var(--border), transparent);
-    }
-
-    /* About */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 84px;
-      align-items: start;
-    }
-
-    .about-card {
-      padding: 34px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      background: linear-gradient(145deg, rgba(14, 23, 46, 0.84), rgba(7, 11, 25, 0.76));
-      box-shadow: var(--shadow);
-    }
-
-    .about-card-label {
-      margin-bottom: 18px;
-      color: var(--gold);
-      font-size: 0.67rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-
-    .about-card blockquote {
-      color: var(--silver-100);
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(1.55rem, 3vw, 2.25rem);
-      line-height: 1.25;
-    }
-
-    .about-card footer {
-      margin-top: 22px;
-      color: var(--silver-400);
-      font-size: 0.76rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    /* Portfolio */
-    .portfolio-section {
-      background:
-        linear-gradient(180deg, transparent, rgba(8, 14, 30, 0.68) 16%, rgba(8, 14, 30, 0.68) 86%, transparent);
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .venture-card {
-      position: relative;
-      min-height: 360px;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      padding: 30px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      background:
-        linear-gradient(160deg, rgba(14, 23, 47, 0.94), rgba(6, 10, 23, 0.92));
-      box-shadow: 0 14px 42px rgba(0, 0, 0, 0.19);
-      transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
-    }
-
-    .venture-card::before {
-      content: "";
-      position: absolute;
-      top: -80px;
-      right: -90px;
-      width: 240px;
-      height: 240px;
-      border-radius: 50%;
-      background: radial-gradient(circle, color-mix(in srgb, var(--accent) 22%, transparent), transparent 68%);
-      pointer-events: none;
-    }
-
-    .venture-card:hover {
-      transform: translateY(-5px);
-      border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
-      box-shadow: 0 22px 56px rgba(0, 0, 0, 0.28);
-    }
-
-    .venture-card.featured {
-      grid-column: span 2;
-      min-height: 330px;
-    }
-
-    .venture-top {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .venture-mark {
-      width: 54px;
-      height: 54px;
-      display: grid;
-      place-items: center;
-      border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
-      border-radius: 15px;
-      background: color-mix(in srgb, var(--accent) 10%, transparent);
-      color: var(--accent);
-      font-family: "Cinzel", serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-    }
-
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 7px 10px;
-      border: 1px solid rgba(81, 197, 139, 0.25);
-      border-radius: 999px;
-      background: rgba(81, 197, 139, 0.06);
-      color: #7ee0ad;
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .status::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 10px rgba(81, 197, 139, 0.8);
-    }
-
-    .venture-body {
-      position: relative;
-      z-index: 1;
-      margin-top: 28px;
-    }
-
-    .venture-sector {
-      margin-bottom: 9px;
-      color: var(--accent);
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .venture-name {
-      margin-bottom: 13px;
-      color: var(--white);
-      font-family: "Cinzel", serif;
-      font-size: clamp(1.15rem, 2vw, 1.55rem);
-      font-weight: 600;
-      letter-spacing: 0.03em;
-    }
-
-    .venture-description {
-      max-width: 760px;
-      color: var(--silver-300);
-      font-size: 0.9rem;
-      font-weight: 300;
-      line-height: 1.78;
-    }
-
-    .venture-meta {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 20px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 28px;
-      padding: 0 9px;
-      border: 1px solid var(--border);
-      border-radius: 7px;
-      background: rgba(255,255,255,0.025);
-      color: var(--silver-300);
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .tag.mobile {
-      border-color: rgba(91, 141, 246, 0.25);
-      background: rgba(91, 141, 246, 0.06);
-      color: var(--blue-300);
-    }
-
-    .venture-links {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: auto;
-      padding-top: 28px;
-    }
-
-    .venture-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--silver-100);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
-    .venture-link::after {
-      content: "↗";
-      color: var(--accent);
-      font-size: 0.95rem;
-      transition: transform 0.2s ease;
-    }
-
-    .venture-link:hover::after {
-      transform: translate(2px, -2px);
-    }
-
-    .venture-link + .venture-link {
-      padding-left: 14px;
-      border-left: 1px solid var(--border);
-    }
-
-    /* Mobile portfolio */
-    .apps-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 44px;
-    }
-
-    .app-tile {
-      min-height: 188px;
-      display: flex;
-      flex-direction: column;
-      padding: 22px;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: rgba(10, 16, 33, 0.74);
-      transition:
-        transform 0.22s ease,
-        border-color 0.22s ease;
-    }
-
-    .app-tile:hover {
-      transform: translateY(-4px);
-      border-color: rgba(117, 166, 255, 0.32);
-    }
-
-    .app-icon {
-      width: 40px;
-      height: 40px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 18px;
-      border-radius: 12px;
-      background: linear-gradient(145deg, rgba(91,141,246,0.18), rgba(155,130,255,0.12));
-      color: var(--blue-300);
-    }
-
-    .app-icon svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .app-name {
-      color: var(--silver-100);
-      font-size: 0.86rem;
-      font-weight: 700;
-      line-height: 1.35;
-    }
-
-    .app-platforms {
-      margin-top: 5px;
-      color: var(--silver-400);
-      font-size: 0.7rem;
-      line-height: 1.45;
-    }
-
-    .app-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: auto;
-      padding-top: 18px;
-    }
-
-    .app-links a {
-      color: var(--blue-300);
-      font-size: 0.64rem;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
-    /* Principles */
-    .principles-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 46px;
-    }
-
-    .principle {
-      padding: 30px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      background: rgba(9, 15, 32, 0.72);
-    }
-
-    .principle-number {
-      margin-bottom: 28px;
-      color: var(--blue-300);
-      font-family: "Cormorant Garamond", serif;
-      font-size: 2rem;
-      font-weight: 600;
-    }
-
-    .principle h3 {
-      margin-bottom: 11px;
-      color: var(--white);
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.55rem;
-      font-weight: 600;
-    }
-
-    .principle p {
-      color: var(--silver-400);
-      font-size: 0.86rem;
-      font-weight: 300;
-      line-height: 1.75;
-    }
-
-    /* Contact */
-    .contact-panel {
-      position: relative;
-      overflow: hidden;
-      padding: 58px;
-      border: 1px solid var(--border);
-      border-radius: 30px;
-      background:
-        radial-gradient(circle at 86% 20%, rgba(91, 141, 246, 0.2), transparent 34%),
-        linear-gradient(145deg, rgba(15, 25, 51, 0.96), rgba(7, 11, 25, 0.94));
-      box-shadow: var(--shadow);
-    }
-
-    .contact-panel::after {
-      content: "";
-      position: absolute;
-      right: -100px;
-      bottom: -130px;
-      width: 340px;
-      height: 340px;
-      border: 1px solid rgba(117, 166, 255, 0.13);
-      border-radius: 50%;
-    }
-
-    .contact-panel .section-copy {
-      margin-bottom: 28px;
-    }
-
-    /* Footer */
-    .site-footer {
-      padding: 34px 0 42px;
-      border-top: 1px solid var(--border-soft);
-    }
-
-    .footer-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-    }
-
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .footer-logo {
-      width: 36px;
-      height: 36px;
-      border: 1px solid rgba(117,166,255,0.24);
-      border-radius: 9px;
-      object-fit: cover;
-    }
-
-    .footer-name {
-      color: var(--silver-200);
-      font-family: "Cinzel", serif;
-      font-size: 0.69rem;
-      font-weight: 600;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-    }
-
-    .footer-copy {
-      color: var(--silver-400);
-      font-size: 0.72rem;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
-    .footer-links a {
-      color: var(--silver-400);
-      font-size: 0.7rem;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .footer-links a:hover {
-      color: var(--silver-100);
-    }
-
-    /* Reveal */
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Responsive */
-    @media (max-width: 1080px) {
-      .hero-grid {
-        gap: 44px;
-      }
-
-      .apps-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 900px) {
-      .nav-links,
-      .nav-badge {
-        display: none;
-      }
-
-      .menu-button {
-        display: grid;
-        place-items: center;
-      }
-
-      .nav-links.open {
-        position: absolute;
-        top: 76px;
-        left: 24px;
-        right: 24px;
-        display: grid;
-        gap: 0;
-        overflow: hidden;
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        background: rgba(5, 8, 20, 0.98);
-        box-shadow: var(--shadow);
-      }
-
-      .nav-links.open li {
-        border-bottom: 1px solid var(--border-soft);
-      }
-
-      .nav-links.open li:last-child {
-        border-bottom: 0;
-      }
-
-      .nav-links.open a {
-        display: block;
-        padding: 17px 18px;
-      }
-
-      .hero {
-        padding-top: 124px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-panel {
-        min-height: 420px;
-      }
-
-      .metrics {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .metric:nth-child(2) {
-        border-right: 0;
-      }
-
-      .metric:nth-child(-n + 2) {
-        border-bottom: 1px solid var(--border-soft);
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 46px;
-      }
-
-      .section-head {
-        display: block;
-      }
-
-      .section-head .section-copy {
-        margin-top: 18px;
-      }
-
-      .principles-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .container {
-        width: min(100% - 32px, 1180px);
-      }
-
-      section {
-        padding: 82px 0;
-      }
-
-      .hero {
-        padding-bottom: 72px;
-      }
-
-      .hero h1 {
-        font-size: clamp(3rem, 16vw, 4.6rem);
-      }
-
-      .hero-panel {
-        min-height: 390px;
-        border-radius: 26px;
-      }
-
-      .hero-logo {
-        width: 156px;
-        height: 156px;
-      }
-
-
-      .product-hero {
-        padding: 22px;
-      }
-
-      .product-hero-inner {
-        min-height: 310px;
-        padding: 24px;
-      }
-
-      .product-hero-number {
-        position: static;
-        margin-bottom: 12px;
-      }
-
-      .product-hero-name {
-        font-size: clamp(2.1rem, 10vw, 3.3rem);
-      }
-
-      .orbit-chip {
-        font-size: 0.61rem;
-      }
-
-      .orbit-chip.one { top: 38px; left: 20px; }
-      .orbit-chip.two { top: 99px; right: 16px; }
-      .orbit-chip.three { bottom: 78px; left: 14px; }
-      .orbit-chip.four { bottom: 34px; right: 18px; }
-
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .venture-card.featured {
-        grid-column: auto;
-      }
-
-      .apps-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .contact-panel {
-        padding: 38px 28px;
-      }
-
-      .footer-row {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .brand-sub {
-        display: none;
-      }
-
-      .brand-name {
-        font-size: 0.67rem;
-      }
-
-      .hero-actions {
-        display: grid;
-      }
-
-      .button {
-        width: 100%;
-      }
-
-      .hero-panel {
-        min-height: 350px;
-      }
-
-
-      .product-hero {
-        padding: 18px;
-      }
-
-      .product-hero-inner {
-        min-height: 300px;
-        padding: 22px;
-        border-radius: 22px;
-      }
-
-      .product-hero-description {
-        font-size: 0.84rem;
-      }
-
-      .product-track span {
-        font-size: 0.62rem;
-      }
-
-      .orbit-chip {
-        padding: 7px 9px;
-      }
-
-      .orbit-chip.one { top: 26px; left: 12px; }
-      .orbit-chip.two { top: 78px; right: 8px; }
-      .orbit-chip.three { bottom: 66px; left: 8px; }
-      .orbit-chip.four { bottom: 22px; right: 10px; }
-
-      .metrics {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .metric {
-        padding: 21px 16px;
-      }
-
-      .portfolio-grid {
-        gap: 14px;
-      }
-
-      .venture-card {
-        min-height: 0;
-        padding: 24px;
-      }
-
-      .apps-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
-    }
-  </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Westforge Holdings Inc.",
-    "url": "https://www.westforgeholdings.com/",
-    "email": "invest@westforgeholdings.com",
-    "foundingDate": "2024",
-    "description": "Parent company behind a growing portfolio of digital platforms, SaaS products, public-benefit tools, and mobile products."
-  }
-  </script>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+ <title>Westforge Holdings Inc. | Digital Ventures, SaaS &amp; Mobile Products</title>
+ <meta
+ name="description"
+ content="Westforge Holdings Inc. builds and operates a growing portfolio of digital platforms, SaaS products, public-benefit tools, property evidence products, and mobile apps including FuseHarbor, Keyvera, MedicaidReady, HarborAging, CrownLens, ProstateWise, CivicFlow, ReliefBridge, AfricanKidSpeaks, and SpinBook HQ."
+ />
+ <meta name="theme-color" content="#050814" />
+ <link rel="icon" href="/favicon.ico" sizes="any" />
+ <link rel="canonical" href="https://www.westforgeholdings.com/" />
+
+ <meta property="og:type" content="website" />
+ <meta property="og:title" content="Westforge Holdings Inc. | Digital Ventures, SaaS &amp; Mobile Products" />
+ <meta
+ property="og:description"
+ content="A growing portfolio of practical platforms and mobile products across home services, property, healthcare access, workforce, disaster recovery, civic workflow, beauty technology, education, and entertainment."
+ />
+ <meta property="og:url" content="https://www.westforgeholdings.com/" />
+ <meta property="og:site_name" content="Westforge Holdings Inc." />
+
+ <link rel="preconnect" href="https://fonts.googleapis.com" />
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <link
+ href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap"
+ rel="stylesheet"
+ />
+
+ <style>
+ *,
+ *::before,
+ *::after {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ }
+
+ :root {
+ --navy-950: #03050d;
+ --navy-900: #050814;
+ --navy-850: #091020;
+ --navy-800: #0c152a;
+ --panel: rgba(11, 18, 38, 0.82);
+ --panel-strong: rgba(12, 21, 43, 0.96);
+ --white: #f7f9ff;
+ --silver-100: #e8eefb;
+ --silver-200: #cad5e9;
+ --silver-300: #a8b8d3;
+ --silver-400: #7f91ae;
+ --blue-300: #75a6ff;
+ --blue-400: #5b8df6;
+ --blue-500: #3f73dc;
+ --gold: #c3a36c;
+ --green: #51c58b;
+ --purple: #9b82ff;
+ --teal: #5ed3cf;
+ --rose: #ef7f9d;
+ --orange: #f0a25e;
+ --border: rgba(183, 202, 237, 0.14);
+ --border-soft: rgba(183, 202, 237, 0.08);
+ --shadow: 0 22px 70px rgba(0, 0, 0, 0.34);
+ --radius-lg: 24px;
+ --radius-md: 16px;
+ --radius-sm: 10px;
+ }
+
+ html {
+ scroll-behavior: smooth;
+ scroll-padding-top: 92px;
+ }
+
+ body {
+ min-height: 100vh;
+ overflow-x: hidden;
+ background:
+ radial-gradient(circle at 15% -10%, rgba(63, 115, 220, 0.15), transparent 34%),
+ radial-gradient(circle at 90% 16%, rgba(155, 130, 255, 0.09), transparent 28%),
+ linear-gradient(180deg, var(--navy-950), var(--navy-900) 34%, #040711 100%);
+ color: var(--silver-200);
+ font-family: "Inter", sans-serif;
+ line-height: 1.6;
+ }
+
+ body::before {
+ content: "";
+ position: fixed;
+ inset: 0;
+ z-index: -2;
+ pointer-events: none;
+ opacity: 0.22;
+ background-image:
+ linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+ linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+ background-size: 46px 46px;
+ mask-image: linear-gradient(to bottom, black, transparent 80%);
+ }
+
+ a {
+ color: inherit;
+ }
+
+ img {
+ max-width: 100%;
+ }
+
+ button,
+ a {
+ -webkit-tap-highlight-color: transparent;
+ }
+
+ .container {
+ width: min(1180px, calc(100% - 48px));
+ margin: 0 auto;
+ }
+
+ .skip-link {
+ position: fixed;
+ top: 10px;
+ left: 10px;
+ z-index: 1000;
+ transform: translateY(-160%);
+ padding: 10px 14px;
+ border-radius: 8px;
+ background: var(--white);
+ color: var(--navy-950);
+ font-weight: 700;
+ text-decoration: none;
+ transition: transform 0.2s ease;
+ }
+
+ .skip-link:focus {
+ transform: translateY(0);
+ }
+
+ /* Header */
+ .site-header {
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+ z-index: 100;
+ border-bottom: 1px solid var(--border-soft);
+ background: rgba(3, 5, 13, 0.78);
+ backdrop-filter: blur(20px);
+ -webkit-backdrop-filter: blur(20px);
+ }
+
+ .nav {
+ min-height: 76px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 24px;
+ }
+
+ .brand {
+ display: inline-flex;
+ align-items: center;
+ gap: 13px;
+ text-decoration: none;
+ }
+
+ .brand-logo {
+ width: 44px;
+ height: 44px;
+ border-radius: 11px;
+ border: 1px solid rgba(117, 166, 255, 0.28);
+ box-shadow: 0 0 28px rgba(63, 115, 220, 0.2);
+ object-fit: cover;
+ }
+
+ .brand-copy {
+ display: grid;
+ gap: 1px;
+ }
+
+ .brand-name {
+ color: var(--silver-100);
+ font-family: "Cinzel", serif;
+ font-size: 0.76rem;
+ font-weight: 600;
+ letter-spacing: 0.14em;
+ text-transform: uppercase;
+ }
+
+ .brand-sub {
+ color: var(--silver-400);
+ font-size: 0.63rem;
+ font-weight: 500;
+ letter-spacing: 0.18em;
+ text-transform: uppercase;
+ }
+
+ .nav-links {
+ display: flex;
+ align-items: center;
+ gap: 28px;
+ list-style: none;
+ }
+
+ .nav-links a {
+ color: var(--silver-300);
+ font-size: 0.76rem;
+ font-weight: 600;
+ letter-spacing: 0.08em;
+ text-decoration: none;
+ text-transform: uppercase;
+ transition: color 0.2s ease;
+ }
+
+ .nav-links a:hover,
+ .nav-links a:focus-visible {
+ color: var(--white);
+ }
+
+ .nav-badge {
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ padding: 9px 14px;
+ border: 1px solid rgba(195, 163, 108, 0.36);
+ border-radius: 999px;
+ background:
+ radial-gradient(circle at 20% 20%, rgba(195, 163, 108, 0.18), transparent 38%),
+ rgba(195, 163, 108, 0.07);
+ color: #f0d49a;
+ font-size: 0.67rem;
+ font-weight: 800;
+ letter-spacing: 0.12em;
+ text-decoration: none;
+ text-transform: uppercase;
+ white-space: nowrap;
+ box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+ transition:
+ transform 0.2s ease,
+ border-color 0.2s ease,
+ background 0.2s ease,
+ color 0.2s ease;
+ }
+
+ .nav-badge:hover,
+ .nav-badge:focus-visible {
+ transform: translateY(-1px);
+ border-color: rgba(195, 163, 108, 0.58);
+ background:
+ radial-gradient(circle at 20% 20%, rgba(195, 163, 108, 0.28), transparent 42%),
+ rgba(195, 163, 108, 0.1);
+ color: var(--white);
+ }
+
+ .nav-badge::before {
+ content: "";
+ width: 7px;
+ height: 7px;
+ border-radius: 50%;
+ background: var(--gold);
+ box-shadow: 0 0 12px rgba(195, 163, 108, 0.9);
+ }
+
+ .menu-button {
+ display: none;
+ width: 42px;
+ height: 42px;
+ border: 1px solid var(--border);
+ border-radius: 10px;
+ background: rgba(255, 255, 255, 0.03);
+ color: var(--silver-100);
+ cursor: pointer;
+ }
+
+ .menu-button svg {
+ width: 20px;
+ height: 20px;
+ }
+
+ /* Hero */
+ .hero {
+ min-height: 100svh;
+ display: flex;
+ align-items: center;
+ padding: 132px 0 88px;
+ }
+
+ .hero-grid {
+ display: grid;
+ grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.88fr);
+ gap: 76px;
+ align-items: center;
+ }
+
+ .eyebrow {
+ display: inline-flex;
+ align-items: center;
+ gap: 12px;
+ margin-bottom: 24px;
+ color: var(--blue-300);
+ font-size: 0.7rem;
+ font-weight: 700;
+ letter-spacing: 0.24em;
+ text-transform: uppercase;
+ }
+
+ .eyebrow::before {
+ content: "";
+ width: 32px;
+ height: 1px;
+ background: linear-gradient(90deg, transparent, var(--blue-300));
+ }
+
+ .hero h1 {
+ max-width: 760px;
+ margin-bottom: 24px;
+ color: var(--white);
+ font-family: "Cormorant Garamond", serif;
+ font-size: clamp(3.2rem, 7vw, 6.4rem);
+ font-weight: 500;
+ letter-spacing: -0.045em;
+ line-height: 0.96;
+ }
+
+ .hero h1 span {
+ display: block;
+ margin-top: 8px;
+ background: linear-gradient(100deg, var(--silver-100), var(--blue-300) 55%, var(--purple));
+ -webkit-background-clip: text;
+ background-clip: text;
+ color: transparent;
+ }
+
+ .hero-lead {
+ max-width: 670px;
+ color: var(--silver-300);
+ font-size: clamp(1rem, 1.7vw, 1.15rem);
+ font-weight: 300;
+ line-height: 1.85;
+ }
+
+ .hero-actions {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 14px;
+ margin-top: 34px;
+ }
+
+ .button {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ gap: 10px;
+ min-height: 50px;
+ padding: 0 24px;
+ border: 1px solid transparent;
+ border-radius: 10px;
+ font-size: 0.76rem;
+ font-weight: 700;
+ letter-spacing: 0.1em;
+ text-decoration: none;
+ text-transform: uppercase;
+ transition:
+ transform 0.2s ease,
+ border-color 0.2s ease,
+ background 0.2s ease,
+ box-shadow 0.2s ease;
+ }
+
+ .button:hover {
+ transform: translateY(-2px);
+ }
+
+ .button-primary {
+ background: linear-gradient(135deg, var(--blue-500), var(--blue-400));
+ color: #fff;
+ box-shadow: 0 15px 38px rgba(63, 115, 220, 0.28);
+ }
+
+ .button-primary:hover {
+ box-shadow: 0 18px 45px rgba(63, 115, 220, 0.38);
+ }
+
+ .button-secondary {
+ border-color: var(--border);
+ background: rgba(255,255,255,0.025);
+ color: var(--silver-100);
+ }
+
+ .button-secondary:hover {
+ border-color: rgba(117, 166, 255, 0.38);
+ background: rgba(117, 166, 255, 0.06);
+ }
+
+ .hero-panel {
+ position: relative;
+ min-height: 470px;
+ display: grid;
+ place-items: center;
+ overflow: hidden;
+ border: 1px solid var(--border);
+ border-radius: 34px;
+ background:
+ radial-gradient(circle at 50% 40%, rgba(74, 127, 232, 0.18), transparent 37%),
+ linear-gradient(145deg, rgba(14, 24, 48, 0.92), rgba(6, 10, 22, 0.86));
+ box-shadow: var(--shadow);
+ }
+
+ .hero-panel::before,
+ .hero-panel::after {
+ content: "";
+ position: absolute;
+ border: 1px solid rgba(117, 166, 255, 0.12);
+ border-radius: 50%;
+ }
+
+ .hero-panel::before {
+ width: 370px;
+ height: 370px;
+ }
+
+ .hero-panel::after {
+ width: 270px;
+ height: 270px;
+ border-color: rgba(195, 163, 108, 0.15);
+ }
+
+ .hero-logo {
+ position: relative;
+ z-index: 2;
+ width: 196px;
+ height: 196px;
+ object-fit: contain;
+ filter:
+ drop-shadow(0 20px 40px rgba(0, 0, 0, 0.56))
+ drop-shadow(0 0 38px rgba(74, 127, 232, 0.32));
+ }
+
+ .orbit-chip {
+ position: absolute;
+ z-index: 3;
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ padding: 9px 12px;
+ border: 1px solid var(--border);
+ border-radius: 999px;
+ background: rgba(5, 8, 20, 0.82);
+ color: var(--silver-200);
+ font-size: 0.68rem;
+ font-weight: 600;
+ letter-spacing: 0.04em;
+ box-shadow: 0 10px 28px rgba(0,0,0,0.24);
+ backdrop-filter: blur(14px);
+ }
+
+ .orbit-chip::before {
+ content: "";
+ width: 7px;
+ height: 7px;
+ border-radius: 50%;
+ background: var(--chip-color, var(--blue-300));
+ box-shadow: 0 0 12px color-mix(in srgb, var(--chip-color, var(--blue-300)) 75%, transparent);
+ }
+
+ .orbit-chip.one { top: 52px; left: 42px; --chip-color: var(--green); }
+ .orbit-chip.two { top: 115px; right: 30px; --chip-color: var(--purple); }
+ .orbit-chip.three { bottom: 90px; left: 26px; --chip-color: var(--gold); }
+ .orbit-chip.four { bottom: 43px; right: 42px; --chip-color: var(--teal); }
+
+
+
+ /* Rotating hero product showcase */
+ .product-hero {
+ display: block;
+ padding: 30px;
+ }
+
+ .product-hero::before {
+ width: 420px;
+ height: 420px;
+ animation: slowOrbit 18s linear infinite;
+ }
+
+ .product-hero::after {
+ width: 300px;
+ height: 300px;
+ animation: slowOrbitReverse 22s linear infinite;
+ }
+
+ .product-hero-inner {
+ position: relative;
+ z-index: 4;
+ min-height: 330px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ padding: 30px;
+ border: 1px solid rgba(183, 202, 237, 0.15);
+ border-radius: 26px;
+ background:
+ linear-gradient(145deg, rgba(8, 13, 28, 0.86), rgba(4, 7, 16, 0.74));
+ box-shadow: 0 18px 50px rgba(0,0,0,0.28);
+ backdrop-filter: blur(18px);
+ transition: opacity 0.25s ease, transform 0.25s ease;
+ }
+
+ .product-hero-inner.is-changing {
+ opacity: 0;
+ transform: translateY(10px) scale(0.985);
+ }
+
+ .product-hero-kicker {
+ display: inline-flex;
+ align-items: center;
+ gap: 9px;
+ margin-bottom: 18px;
+ color: var(--blue-300);
+ font-size: 0.66rem;
+ font-weight: 800;
+ letter-spacing: 0.18em;
+ text-transform: uppercase;
+ }
+
+ .product-hero-kicker::before {
+ content: "";
+ width: 7px;
+ height: 7px;
+ border-radius: 50%;
+ background: var(--green);
+ box-shadow: 0 0 12px rgba(81, 197, 139, 0.9);
+ }
+
+ .product-hero-number {
+ position: absolute;
+ top: 28px;
+ right: 30px;
+ color: var(--silver-400);
+ font-size: 0.66rem;
+ font-weight: 800;
+ letter-spacing: 0.14em;
+ text-transform: uppercase;
+ }
+
+ .product-hero-sector {
+ margin-bottom: 12px;
+ color: var(--gold);
+ font-size: 0.68rem;
+ font-weight: 800;
+ letter-spacing: 0.18em;
+ text-transform: uppercase;
+ }
+
+ .product-hero-name {
+ max-width: 470px;
+ margin-bottom: 14px;
+ color: var(--white);
+ font-family: "Cormorant Garamond", serif;
+ font-size: clamp(2.35rem, 4.8vw, 4.25rem);
+ font-weight: 600;
+ letter-spacing: -0.035em;
+ line-height: 0.95;
+ }
+
+ .product-hero-description {
+ max-width: 480px;
+ color: var(--silver-300);
+ font-size: 0.9rem;
+ font-weight: 300;
+ line-height: 1.75;
+ }
+
+ .product-hero-tags {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 8px;
+ margin-top: 20px;
+ }
+
+ .product-hero-tags span {
+ min-height: 28px;
+ display: inline-flex;
+ align-items: center;
+ padding: 0 9px;
+ border: 1px solid rgba(117, 166, 255, 0.22);
+ border-radius: 8px;
+ background: rgba(117, 166, 255, 0.06);
+ color: var(--silver-200);
+ font-size: 0.62rem;
+ font-weight: 800;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+ }
+
+ .product-hero-link {
+ width: max-content;
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ margin-top: 24px;
+ color: var(--blue-300);
+ font-size: 0.72rem;
+ font-weight: 800;
+ letter-spacing: 0.1em;
+ text-decoration: none;
+ text-transform: uppercase;
+ }
+
+ .product-hero-link::after {
+ content: "↗";
+ font-size: 0.95rem;
+ }
+
+ .product-dots {
+ position: relative;
+ z-index: 5;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ gap: 7px;
+ margin-top: 18px;
+ }
+
+ .product-dot {
+ width: 8px;
+ height: 8px;
+ border: 0;
+ border-radius: 999px;
+ background: rgba(168, 184, 211, 0.28);
+ cursor: pointer;
+ transition: width 0.25s ease, background 0.25s ease;
+ }
+
+ .product-dot.active {
+ width: 24px;
+ background: var(--blue-300);
+ box-shadow: 0 0 14px rgba(117, 166, 255, 0.5);
+ }
+
+ .product-marquee {
+ position: relative;
+ z-index: 4;
+ overflow: hidden;
+ margin-top: 18px;
+ border: 1px solid rgba(183, 202, 237, 0.1);
+ border-radius: 999px;
+ background: rgba(3, 5, 13, 0.5);
+ mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+ }
+
+ .product-track {
+ display: flex;
+ width: max-content;
+ gap: 10px;
+ padding: 10px 0;
+ animation: productMarquee 30s linear infinite;
+ }
+
+ .product-track span {
+ display: inline-flex;
+ align-items: center;
+ gap: 7px;
+ padding: 7px 11px;
+ border: 1px solid rgba(183, 202, 237, 0.1);
+ border-radius: 999px;
+ color: var(--silver-300);
+ font-size: 0.67rem;
+ font-weight: 700;
+ white-space: nowrap;
+ background: rgba(255,255,255,0.025);
+ }
+
+ .product-track span::before {
+ content: "";
+ width: 6px;
+ height: 6px;
+ border-radius: 50%;
+ background: var(--blue-300);
+ }
+
+ .product-progress {
+ position: relative;
+ z-index: 5;
+ height: 3px;
+ margin-top: 18px;
+ overflow: hidden;
+ border-radius: 999px;
+ background: rgba(183, 202, 237, 0.1);
+ }
+
+ .product-progress span {
+ display: block;
+ height: 100%;
+ border-radius: inherit;
+ background: linear-gradient(90deg, var(--blue-500), var(--blue-300), var(--purple));
+ animation: productProgress 4.2s linear infinite;
+ }
+
+ @keyframes productMarquee {
+ from { transform: translateX(0); }
+ to { transform: translateX(-50%); }
+ }
+
+ @keyframes productProgress {
+ from { width: 0%; }
+ to { width: 100%; }
+ }
+
+ @keyframes slowOrbit {
+ from { transform: rotate(0deg) scale(1); }
+ to { transform: rotate(360deg) scale(1); }
+ }
+
+ @keyframes slowOrbitReverse {
+ from { transform: rotate(360deg) scale(1); }
+ to { transform: rotate(0deg) scale(1); }
+ }
+
+ .metrics {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ margin-top: 26px;
+ overflow: hidden;
+ border: 1px solid var(--border);
+ border-radius: 18px;
+ background: rgba(8, 13, 28, 0.7);
+ }
+
+ .metric {
+ padding: 25px 22px;
+ border-right: 1px solid var(--border-soft);
+ }
+
+ .metric:last-child {
+ border-right: 0;
+ }
+
+ .metric-value {
+ margin-bottom: 5px;
+ color: var(--white);
+ font-family: "Cormorant Garamond", serif;
+ font-size: 2rem;
+ font-weight: 600;
+ line-height: 1;
+ }
+
+ .metric-label {
+ color: var(--silver-400);
+ font-size: 0.65rem;
+ font-weight: 700;
+ letter-spacing: 0.15em;
+ text-transform: uppercase;
+ }
+
+ /* Shared sections */
+ section {
+ position: relative;
+ padding: 104px 0;
+ }
+
+ .section-kicker {
+ margin-bottom: 14px;
+ color: var(--blue-300);
+ font-size: 0.68rem;
+ font-weight: 700;
+ letter-spacing: 0.24em;
+ text-transform: uppercase;
+ }
+
+ .section-title {
+ max-width: 760px;
+ color: var(--white);
+ font-family: "Cormorant Garamond", serif;
+ font-size: clamp(2.4rem, 5vw, 4.1rem);
+ font-weight: 500;
+ letter-spacing: -0.03em;
+ line-height: 1.05;
+ }
+
+ .section-copy {
+ max-width: 680px;
+ margin-top: 18px;
+ color: var(--silver-300);
+ font-size: 0.98rem;
+ font-weight: 300;
+ line-height: 1.85;
+ }
+
+ .section-head {
+ display: flex;
+ align-items: end;
+ justify-content: space-between;
+ gap: 36px;
+ margin-bottom: 46px;
+ }
+
+ .section-head .section-copy {
+ max-width: 460px;
+ margin-top: 0;
+ }
+
+ .rule {
+ height: 1px;
+ margin: 0;
+ border: 0;
+ background: linear-gradient(90deg, transparent, var(--border), transparent);
+ }
+
+ /* About */
+ .about-grid {
+ display: grid;
+ grid-template-columns: 0.95fr 1.05fr;
+ gap: 84px;
+ align-items: start;
+ }
+
+ .about-card {
+ padding: 34px;
+ border: 1px solid var(--border);
+ border-radius: var(--radius-lg);
+ background: linear-gradient(145deg, rgba(14, 23, 46, 0.84), rgba(7, 11, 25, 0.76));
+ box-shadow: var(--shadow);
+ }
+
+ .about-card-label {
+ margin-bottom: 18px;
+ color: var(--gold);
+ font-size: 0.67rem;
+ font-weight: 700;
+ letter-spacing: 0.2em;
+ text-transform: uppercase;
+ }
+
+ .about-card blockquote {
+ color: var(--silver-100);
+ font-family: "Cormorant Garamond", serif;
+ font-size: clamp(1.55rem, 3vw, 2.25rem);
+ line-height: 1.25;
+ }
+
+ .about-card footer {
+ margin-top: 22px;
+ color: var(--silver-400);
+ font-size: 0.76rem;
+ font-weight: 600;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+ }
+
+ /* Portfolio */
+ .portfolio-section {
+ background:
+ linear-gradient(180deg, transparent, rgba(8, 14, 30, 0.68) 16%, rgba(8, 14, 30, 0.68) 86%, transparent);
+ }
+
+ .portfolio-grid {
+ display: grid;
+ grid-template-columns: repeat(2, minmax(0, 1fr));
+ gap: 18px;
+ }
+
+ .venture-card {
+ position: relative;
+ min-height: 360px;
+ display: flex;
+ flex-direction: column;
+ overflow: hidden;
+ padding: 30px;
+ border: 1px solid var(--border);
+ border-radius: var(--radius-lg);
+ background:
+ linear-gradient(160deg, rgba(14, 23, 47, 0.94), rgba(6, 10, 23, 0.92));
+ box-shadow: 0 14px 42px rgba(0, 0, 0, 0.19);
+ transition:
+ transform 0.25s ease,
+ border-color 0.25s ease,
+ box-shadow 0.25s ease;
+ }
+
+ .venture-card::before {
+ content: "";
+ position: absolute;
+ top: -80px;
+ right: -90px;
+ width: 240px;
+ height: 240px;
+ border-radius: 50%;
+ background: radial-gradient(circle, color-mix(in srgb, var(--accent) 22%, transparent), transparent 68%);
+ pointer-events: none;
+ }
+
+ .venture-card:hover {
+ transform: translateY(-5px);
+ border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
+ box-shadow: 0 22px 56px rgba(0, 0, 0, 0.28);
+ }
+
+ .venture-card.featured {
+ grid-column: span 2;
+ min-height: 330px;
+ }
+
+ .venture-top {
+ position: relative;
+ z-index: 1;
+ display: flex;
+ align-items: flex-start;
+ justify-content: space-between;
+ gap: 20px;
+ }
+
+ .venture-mark {
+ width: 54px;
+ height: 54px;
+ display: grid;
+ place-items: center;
+ border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+ border-radius: 15px;
+ background: color-mix(in srgb, var(--accent) 10%, transparent);
+ color: var(--accent);
+ font-family: "Cinzel", serif;
+ font-size: 0.8rem;
+ font-weight: 600;
+ letter-spacing: 0.04em;
+ }
+
+ .status {
+ display: inline-flex;
+ align-items: center;
+ gap: 7px;
+ padding: 7px 10px;
+ border: 1px solid rgba(81, 197, 139, 0.25);
+ border-radius: 999px;
+ background: rgba(81, 197, 139, 0.06);
+ color: #7ee0ad;
+ font-size: 0.62rem;
+ font-weight: 700;
+ letter-spacing: 0.11em;
+ text-transform: uppercase;
+ white-space: nowrap;
+ }
+
+ .status::before {
+ content: "";
+ width: 6px;
+ height: 6px;
+ border-radius: 50%;
+ background: var(--green);
+ box-shadow: 0 0 10px rgba(81, 197, 139, 0.8);
+ }
+
+ .venture-body {
+ position: relative;
+ z-index: 1;
+ margin-top: 28px;
+ }
+
+ .venture-sector {
+ margin-bottom: 9px;
+ color: var(--accent);
+ font-size: 0.65rem;
+ font-weight: 700;
+ letter-spacing: 0.18em;
+ text-transform: uppercase;
+ }
+
+ .venture-name {
+ margin-bottom: 13px;
+ color: var(--white);
+ font-family: "Cinzel", serif;
+ font-size: clamp(1.15rem, 2vw, 1.55rem);
+ font-weight: 600;
+ letter-spacing: 0.03em;
+ }
+
+ .venture-description {
+ max-width: 760px;
+ color: var(--silver-300);
+ font-size: 0.9rem;
+ font-weight: 300;
+ line-height: 1.78;
+ }
+
+ .venture-meta {
+ position: relative;
+ z-index: 1;
+ display: flex;
+ flex-wrap: wrap;
+ gap: 8px;
+ margin-top: 20px;
+ }
+
+ .tag {
+ display: inline-flex;
+ align-items: center;
+ min-height: 28px;
+ padding: 0 9px;
+ border: 1px solid var(--border);
+ border-radius: 7px;
+ background: rgba(255,255,255,0.025);
+ color: var(--silver-300);
+ font-size: 0.62rem;
+ font-weight: 700;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+ }
+
+ .tag.mobile {
+ border-color: rgba(91, 141, 246, 0.25);
+ background: rgba(91, 141, 246, 0.06);
+ color: var(--blue-300);
+ }
+
+ .venture-links {
+ position: relative;
+ z-index: 1;
+ display: flex;
+ flex-wrap: wrap;
+ gap: 10px;
+ margin-top: auto;
+ padding-top: 28px;
+ }
+
+ .venture-link {
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ color: var(--silver-100);
+ font-size: 0.72rem;
+ font-weight: 700;
+ letter-spacing: 0.08em;
+ text-decoration: none;
+ text-transform: uppercase;
+ }
+
+ .venture-link::after {
+ content: "↗";
+ color: var(--accent);
+ font-size: 0.95rem;
+ transition: transform 0.2s ease;
+ }
+
+ .venture-link:hover::after {
+ transform: translate(2px, -2px);
+ }
+
+ .venture-link + .venture-link {
+ padding-left: 14px;
+ border-left: 1px solid var(--border);
+ }
+
+ /* Mobile portfolio */
+ .apps-grid {
+ display: grid;
+ grid-template-columns: repeat(5, minmax(0, 1fr));
+ gap: 12px;
+ margin-top: 44px;
+ }
+
+ .app-tile {
+ min-height: 188px;
+ display: flex;
+ flex-direction: column;
+ padding: 22px;
+ border: 1px solid var(--border);
+ border-radius: 18px;
+ background: rgba(10, 16, 33, 0.74);
+ transition:
+ transform 0.22s ease,
+ border-color 0.22s ease;
+ }
+
+ .app-tile:hover {
+ transform: translateY(-4px);
+ border-color: rgba(117, 166, 255, 0.32);
+ }
+
+ .app-icon {
+ width: 40px;
+ height: 40px;
+ display: grid;
+ place-items: center;
+ margin-bottom: 18px;
+ border-radius: 12px;
+ background: linear-gradient(145deg, rgba(91,141,246,0.18), rgba(155,130,255,0.12));
+ color: var(--blue-300);
+ }
+
+ .app-icon svg {
+ width: 20px;
+ height: 20px;
+ }
+
+ .app-name {
+ color: var(--silver-100);
+ font-size: 0.86rem;
+ font-weight: 700;
+ line-height: 1.35;
+ }
+
+ .app-platforms {
+ margin-top: 5px;
+ color: var(--silver-400);
+ font-size: 0.7rem;
+ line-height: 1.45;
+ }
+
+ .app-links {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 10px;
+ margin-top: auto;
+ padding-top: 18px;
+ }
+
+ .app-links a {
+ color: var(--blue-300);
+ font-size: 0.64rem;
+ font-weight: 700;
+ letter-spacing: 0.07em;
+ text-decoration: none;
+ text-transform: uppercase;
+ }
+
+ /* Principles */
+ .principles-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 18px;
+ margin-top: 46px;
+ }
+
+ .principle {
+ padding: 30px;
+ border: 1px solid var(--border);
+ border-radius: var(--radius-lg);
+ background: rgba(9, 15, 32, 0.72);
+ }
+
+ .principle-number {
+ margin-bottom: 28px;
+ color: var(--blue-300);
+ font-family: "Cormorant Garamond", serif;
+ font-size: 2rem;
+ font-weight: 600;
+ }
+
+ .principle h3 {
+ margin-bottom: 11px;
+ color: var(--white);
+ font-family: "Cormorant Garamond", serif;
+ font-size: 1.55rem;
+ font-weight: 600;
+ }
+
+ .principle p {
+ color: var(--silver-400);
+ font-size: 0.86rem;
+ font-weight: 300;
+ line-height: 1.75;
+ }
+
+ /* Contact */
+ .contact-panel {
+ position: relative;
+ overflow: hidden;
+ padding: 58px;
+ border: 1px solid var(--border);
+ border-radius: 30px;
+ background:
+ radial-gradient(circle at 86% 20%, rgba(91, 141, 246, 0.2), transparent 34%),
+ linear-gradient(145deg, rgba(15, 25, 51, 0.96), rgba(7, 11, 25, 0.94));
+ box-shadow: var(--shadow);
+ }
+
+ .contact-panel::after {
+ content: "";
+ position: absolute;
+ right: -100px;
+ bottom: -130px;
+ width: 340px;
+ height: 340px;
+ border: 1px solid rgba(117, 166, 255, 0.13);
+ border-radius: 50%;
+ }
+
+ .contact-panel .section-copy {
+ margin-bottom: 28px;
+ }
+
+ /* Footer */
+ .site-footer {
+ padding: 34px 0 42px;
+ border-top: 1px solid var(--border-soft);
+ }
+
+ .footer-row {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 28px;
+ }
+
+ .footer-brand {
+ display: flex;
+ align-items: center;
+ gap: 12px;
+ }
+
+ .footer-logo {
+ width: 36px;
+ height: 36px;
+ border: 1px solid rgba(117,166,255,0.24);
+ border-radius: 9px;
+ object-fit: cover;
+ }
+
+ .footer-name {
+ color: var(--silver-200);
+ font-family: "Cinzel", serif;
+ font-size: 0.69rem;
+ font-weight: 600;
+ letter-spacing: 0.11em;
+ text-transform: uppercase;
+ }
+
+ .footer-copy {
+ color: var(--silver-400);
+ font-size: 0.72rem;
+ }
+
+ .footer-links {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 18px;
+ }
+
+ .footer-links a {
+ color: var(--silver-400);
+ font-size: 0.7rem;
+ font-weight: 600;
+ text-decoration: none;
+ }
+
+ .footer-links a:hover {
+ color: var(--silver-100);
+ }
+
+ /* Reveal */
+ .reveal {
+ opacity: 0;
+ transform: translateY(22px);
+ transition:
+ opacity 0.7s ease,
+ transform 0.7s ease;
+ }
+
+ .reveal.visible {
+ opacity: 1;
+ transform: translateY(0);
+ }
+
+ /* Responsive */
+ @media (max-width: 1080px) {
+ .hero-grid {
+ gap: 44px;
+ }
+
+ .apps-grid {
+ grid-template-columns: repeat(3, minmax(0, 1fr));
+ }
+ }
+
+ @media (max-width: 900px) {
+ .nav-links,
+ .nav-badge {
+ display: none;
+ }
+
+ .menu-button {
+ display: grid;
+ place-items: center;
+ }
+
+ .nav-links.open {
+ position: absolute;
+ top: 76px;
+ left: 24px;
+ right: 24px;
+ display: grid;
+ gap: 0;
+ overflow: hidden;
+ border: 1px solid var(--border);
+ border-radius: 16px;
+ background: rgba(5, 8, 20, 0.98);
+ box-shadow: var(--shadow);
+ }
+
+ .nav-links.open li {
+ border-bottom: 1px solid var(--border-soft);
+ }
+
+ .nav-links.open li:last-child {
+ border-bottom: 0;
+ }
+
+ .nav-links.open a {
+ display: block;
+ padding: 17px 18px;
+ }
+
+ .hero {
+ padding-top: 124px;
+ }
+
+ .hero-grid {
+ grid-template-columns: 1fr;
+ }
+
+ .hero-panel {
+ min-height: 420px;
+ }
+
+ .metrics {
+ grid-template-columns: repeat(2, 1fr);
+ }
+
+ .metric:nth-child(2) {
+ border-right: 0;
+ }
+
+ .metric:nth-child(-n + 2) {
+ border-bottom: 1px solid var(--border-soft);
+ }
+
+ .about-grid {
+ grid-template-columns: 1fr;
+ gap: 46px;
+ }
+
+ .section-head {
+ display: block;
+ }
+
+ .section-head .section-copy {
+ margin-top: 18px;
+ }
+
+ .principles-grid {
+ grid-template-columns: 1fr;
+ }
+ }
+
+ @media (max-width: 720px) {
+ .container {
+ width: min(100% - 32px, 1180px);
+ }
+
+ section {
+ padding: 82px 0;
+ }
+
+ .hero {
+ padding-bottom: 72px;
+ }
+
+ .hero h1 {
+ font-size: clamp(3rem, 16vw, 4.6rem);
+ }
+
+ .hero-panel {
+ min-height: 390px;
+ border-radius: 26px;
+ }
+
+ .hero-logo {
+ width: 156px;
+ height: 156px;
+ }
+
+
+ .product-hero {
+ padding: 22px;
+ }
+
+ .product-hero-inner {
+ min-height: 310px;
+ padding: 24px;
+ }
+
+ .product-hero-number {
+ position: static;
+ margin-bottom: 12px;
+ }
+
+ .product-hero-name {
+ font-size: clamp(2.1rem, 10vw, 3.3rem);
+ }
+
+ .orbit-chip {
+ font-size: 0.61rem;
+ }
+
+ .orbit-chip.one { top: 38px; left: 20px; }
+ .orbit-chip.two { top: 99px; right: 16px; }
+ .orbit-chip.three { bottom: 78px; left: 14px; }
+ .orbit-chip.four { bottom: 34px; right: 18px; }
+
+ .portfolio-grid {
+ grid-template-columns: 1fr;
+ }
+
+ .venture-card.featured {
+ grid-column: auto;
+ }
+
+ .apps-grid {
+ grid-template-columns: repeat(2, minmax(0, 1fr));
+ }
+
+ .contact-panel {
+ padding: 38px 28px;
+ }
+
+ .footer-row {
+ align-items: flex-start;
+ flex-direction: column;
+ }
+ }
+
+ @media (max-width: 480px) {
+ .brand-sub {
+ display: none;
+ }
+
+ .brand-name {
+ font-size: 0.67rem;
+ }
+
+ .hero-actions {
+ display: grid;
+ }
+
+ .button {
+ width: 100%;
+ }
+
+ .hero-panel {
+ min-height: 350px;
+ }
+
+
+ .product-hero {
+ padding: 18px;
+ }
+
+ .product-hero-inner {
+ min-height: 300px;
+ padding: 22px;
+ border-radius: 22px;
+ }
+
+ .product-hero-description {
+ font-size: 0.84rem;
+ }
+
+ .product-track span {
+ font-size: 0.62rem;
+ }
+
+ .orbit-chip {
+ padding: 7px 9px;
+ }
+
+ .orbit-chip.one { top: 26px; left: 12px; }
+ .orbit-chip.two { top: 78px; right: 8px; }
+ .orbit-chip.three { bottom: 66px; left: 8px; }
+ .orbit-chip.four { bottom: 22px; right: 10px; }
+
+ .metrics {
+ grid-template-columns: 1fr 1fr;
+ }
+
+ .metric {
+ padding: 21px 16px;
+ }
+
+ .portfolio-grid {
+ gap: 14px;
+ }
+
+ .venture-card {
+ min-height: 0;
+ padding: 24px;
+ }
+
+ .apps-grid {
+ grid-template-columns: 1fr;
+ }
+ }
+
+ @media (prefers-reduced-motion: reduce) {
+ html {
+ scroll-behavior: auto;
+ }
+
+ *,
+ *::before,
+ *::after {
+ animation-duration: 0.01ms !important;
+ animation-iteration-count: 1 !important;
+ transition-duration: 0.01ms !important;
+ }
+
+ .reveal {
+ opacity: 1;
+ transform: none;
+ }
+ }
+ </style>
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "Westforge Holdings Inc.",
+ "url": "https://www.westforgeholdings.com/",
+ "email": "invest@westforgeholdings.com",
+ "foundingDate": "2024",
+ "description": "Parent company behind a growing portfolio of digital platforms, SaaS products, public-benefit tools, and mobile products."
+ }
+ </script>
 </head>
 
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
+ <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <header class="site-header">
-    <nav class="nav container" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="Westforge Holdings Inc. home">
-        <img class="brand-logo" src="data:image/webp;base64,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" alt="Westforge Holdings Inc. logo" />
-        <span class="brand-copy">
-          <span class="brand-name">Westforge Holdings</span>
-          <span class="brand-sub">Inc. · Parent Company</span>
-        </span>
-      </a>
+ <header class="site-header">
+ <nav class="nav container" aria-label="Primary navigation">
+ <a class="brand" href="#top" aria-label="Westforge Holdings Inc. home">
+ <img class="brand-logo" src="data:image/webp;base64,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" alt="Westforge Holdings Inc. logo" />
+ <span class="brand-copy">
+ <span class="brand-name">Westforge Holdings</span>
+ <span class="brand-sub">Inc. · Parent Company</span>
+ </span>
+ </a>
 
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about">Company</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#mobile">Mobile Apps</a></li>
-        <li><a href="#principles">Principles</a></li>
-        <li><a href="#partner">Partner</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+ <ul class="nav-links" id="nav-links">
+ <li><a href="#about">Company</a></li>
+ <li><a href="#portfolio">Portfolio</a></li>
+ <li><a href="#mobile">Mobile Apps</a></li>
+ <li><a href="#principles">Principles</a></li>
+ <li><a href="#partner">Partner</a></li>
+ <li><a href="#contact">Contact</a></li>
+ </ul>
 
-      <a class="nav-badge" href="#partner">Partner with Westforge</a>
+ <a class="nav-badge" href="#partner">Partner with Westforge</a>
 
-      <button
-        class="menu-button"
-        id="menu-button"
-        type="button"
-        aria-label="Open navigation menu"
-        aria-controls="nav-links"
-        aria-expanded="false"
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-          <path d="M4 7h16M4 12h16M4 17h16" />
-        </svg>
-      </button>
-    </nav>
-  </header>
+ <button
+ class="menu-button"
+ id="menu-button"
+ type="button"
+ aria-label="Open navigation menu"
+ aria-controls="nav-links"
+ aria-expanded="false"
+ >
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+ <path d="M4 7h16M4 12h16M4 17h16" />
+ </svg>
+ </button>
+ </nav>
+ </header>
 
-  <main id="main-content">
-    <section class="hero" id="top">
-      <div class="container">
-        <div class="hero-grid">
-          <div>
-            <p class="eyebrow">Established 2024 · Building for the long term</p>
-            <h1>
-              Practical products.
-              <span>Purposeful growth.</span>
-            </h1>
-            <p class="hero-lead">
-              Westforge Holdings Inc. is the parent company behind a growing portfolio of digital
-              platforms, SaaS products, public-benefit tools, and mobile apps serving real needs
-              across home services, property, health access, workforce, disaster recovery, civic
-              workflow, beauty technology, education, culture, and entertainment.
-            </p>
+ <main id="main-content">
+ <section class="hero" id="top">
+ <div class="container">
+ <div class="hero-grid">
+ <div>
+ <p class="eyebrow">Established 2024 · Building for the long term</p>
+ <h1>
+ Practical products.
+ <span>Purposeful growth.</span>
+ </h1>
+ <p class="hero-lead">
+ Westforge Holdings Inc. is the parent company behind a growing portfolio of digital
+ platforms, SaaS products, public-benefit tools, and mobile apps serving real needs
+ across home services, property, health access, workforce, disaster recovery, civic
+ workflow, beauty technology, property evidence, education, culture, and entertainment.
+ </p>
 
-            <div class="hero-actions">
-              <a class="button button-primary" href="#portfolio">
-                Explore the Portfolio
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg>
-              </a>
-              <a class="button button-secondary" href="#mobile">
-                View Mobile Products
-              </a>
-              <a class="button button-secondary" href="#partner">
-                Partner with Westforge
-              </a>
-            </div>
-          </div>
+ <div class="hero-actions">
+ <a class="button button-primary" href="#portfolio">
+ Explore the Portfolio
+ <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+ <path d="M5 12h14M13 6l6 6-6 6" />
+ </svg>
+ </a>
+ <a class="button button-secondary" href="#mobile">
+ View Mobile Products
+ </a>
+ <a class="button button-secondary" href="#partner">
+ Partner with Westforge
+ </a>
+ </div>
+ </div>
 
-          <div class="hero-panel product-hero" aria-label="Rotating Westforge product showcase">
-            <div class="product-hero-inner" id="product-hero-card">
-              <div class="product-hero-number" id="product-hero-number">01 / 11</div>
-              <p class="product-hero-kicker">Now in the Portfolio</p>
-              <p class="product-hero-sector" id="product-hero-sector">Home Electrification</p>
-              <h2 class="product-hero-name" id="product-hero-name">FuseHarbor</h2>
-              <p class="product-hero-description" id="product-hero-description">
-                A structured marketplace helping homeowners begin EV charger, electrical panel,
-                heat pump, and backup-power projects with greater clarity, trust, and organization.
-              </p>
-              <div class="product-hero-tags" id="product-hero-tags">
-                <span>Web Platform</span>
-                <span>Mobile App</span>
-              </div>
-              <a class="product-hero-link" id="product-hero-link" href="https://www.fuseharbor.org" target="_blank" rel="noopener noreferrer">View Product</a>
-            </div>
+ <div class="hero-panel product-hero" aria-label="Rotating Westforge product showcase">
+ <div class="product-hero-inner" id="product-hero-card">
+ <div class="product-hero-number" id="product-hero-number">01 / 12</div>
+ <p class="product-hero-kicker">Now in the Portfolio</p>
+ <p class="product-hero-sector" id="product-hero-sector">Home Electrification</p>
+ <h2 class="product-hero-name" id="product-hero-name">FuseHarbor</h2>
+ <p class="product-hero-description" id="product-hero-description">
+ A structured marketplace helping homeowners begin EV charger, electrical panel,
+ heat pump, and backup-power projects with greater clarity, trust, and organization.
+ </p>
+ <div class="product-hero-tags" id="product-hero-tags">
+ <span>Web Platform</span>
+ <span>Mobile App</span>
+ </div>
+ <a class="product-hero-link" id="product-hero-link" href="https://www.fuseharbor.org" target="_blank" rel="noopener noreferrer">View Product</a>
+ </div>
 
-            <div class="product-marquee" aria-hidden="true">
-              <div class="product-track">
-                <span>FuseHarbor</span><span>Keyvera</span><span>MedicaidReady</span><span>MedicaidReady Careers</span><span>HarborAging</span><span>ReliefBridge</span><span>CivicFlow</span><span>ProstateWise</span><span>CrownLens</span><span>AfricanKidSpeaks</span><span>SpinBook HQ</span>
-                <span>FuseHarbor</span><span>Keyvera</span><span>MedicaidReady</span><span>MedicaidReady Careers</span><span>HarborAging</span><span>ReliefBridge</span><span>CivicFlow</span><span>ProstateWise</span><span>CrownLens</span><span>AfricanKidSpeaks</span><span>SpinBook HQ</span>
-              </div>
-            </div>
+ <div class="product-marquee" aria-hidden="true">
+ <div class="product-track">
+ <span>FuseHarbor</span><span>Keyvera</span><span>MedicaidReady</span><span>MedicaidReady Careers</span><span>HarborAging</span><span>ReliefBridge</span><span>CivicFlow</span><span>ProstateWise</span><span>CrownLens</span><span>AfricanKidSpeaks</span><span>SpinBook HQ</span>
+ <span>FuseHarbor</span><span>Keyvera</span><span>MedicaidReady</span><span>MedicaidReady Careers</span><span>HarborAging</span><span>ReliefBridge</span><span>CivicFlow</span><span>ProstateWise</span><span>CrownLens</span><span>AfricanKidSpeaks</span><span>SpinBook HQ</span>
+ </div>
+ </div>
 
-            <div class="product-dots" id="product-hero-dots" aria-label="Product rotation controls"></div>
-            <div class="product-progress" aria-hidden="true"><span></span></div>
-          </div>
-        </div>
+ <div class="product-dots" id="product-hero-dots" aria-label="Product rotation controls"></div>
+ <div class="product-progress" aria-hidden="true"><span></span></div>
+ </div>
+ </div>
 
-        <div class="metrics reveal" aria-label="Portfolio overview">
-          <div class="metric">
-            <div class="metric-value">11</div>
-            <div class="metric-label">Active Products</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value">5</div>
-            <div class="metric-label">Mobile Apps</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value">10</div>
-            <div class="metric-label">Market Lanes</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value">2024</div>
-            <div class="metric-label">Established</div>
-          </div>
-        </div>
-      </div>
-    </section>
+ <div class="metrics reveal" aria-label="Portfolio overview">
+ <div class="metric">
+ <div class="metric-value">11</div>
+ <div class="metric-label">Active Products</div>
+ </div>
+ <div class="metric">
+ <div class="metric-value">5</div>
+ <div class="metric-label">Mobile Apps</div>
+ </div>
+ <div class="metric">
+ <div class="metric-value">10</div>
+ <div class="metric-label">Market Lanes</div>
+ </div>
+ <div class="metric">
+ <div class="metric-value">2024</div>
+ <div class="metric-label">Established</div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <hr class="rule" />
+ <hr class="rule" />
 
-    <section id="about">
-      <div class="container about-grid">
-        <div class="reveal">
-          <p class="section-kicker">The Company</p>
-          <h2 class="section-title">One foundation. Multiple focused ventures.</h2>
-          <p class="section-copy">
-            Westforge provides the strategic, technical, and operational foundation behind each
-            product in the portfolio. Every venture is developed around a defined problem, a clear
-            audience, and a practical path from idea to launch, from mobile consumer tools to
-            workflow SaaS and public-benefit platforms.
-          </p>
-          <p class="section-copy">
-            The portfolio is intentionally diversified, while every product remains connected by
-            the same operating principles: trustworthy experiences, disciplined execution, and
-            long-term value creation.
-          </p>
-        </div>
+ <section id="about">
+ <div class="container about-grid">
+ <div class="reveal">
+ <p class="section-kicker">The Company</p>
+ <h2 class="section-title">One foundation. Multiple focused ventures.</h2>
+ <p class="section-copy">
+ Westforge provides the strategic, technical, and operational foundation behind each
+ product in the portfolio. Every venture is developed around a defined problem, a clear
+ audience, and a practical path from idea to launch, from mobile consumer tools to
+ workflow SaaS and public-benefit platforms.
+ </p>
+ <p class="section-copy">
+ The portfolio is intentionally diversified, while every product remains connected by
+ the same operating principles: trustworthy experiences, disciplined execution, and
+ long-term value creation.
+ </p>
+ </div>
 
-        <aside class="about-card reveal" aria-label="Westforge operating philosophy">
-          <p class="about-card-label">Operating Philosophy</p>
-          <blockquote>
-            “Build products that solve real problems, earn trust, and remain useful long after launch.”
-          </blockquote>
-          <footer>Westforge Holdings Inc.</footer>
-        </aside>
-      </div>
-    </section>
+ <aside class="about-card reveal" aria-label="Westforge operating philosophy">
+ <p class="about-card-label">Operating Philosophy</p>
+ <blockquote>
+ “Build products that solve real problems, earn trust, and remain useful long after launch.”
+ </blockquote>
+ <footer>Westforge Holdings Inc.</footer>
+ </aside>
+ </div>
+ </section>
 
-    <section class="portfolio-section" id="portfolio">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <p class="section-kicker">Portfolio</p>
-            <h2 class="section-title">Our active businesses and products.</h2>
-          </div>
-          <p class="section-copy">
-            Eleven focused products across consumer services, public-benefit technology, property,
-            workforce, health awareness, beauty technology, civic operations, education, and digital marketplaces.
-          </p>
-        </div>
+ <section class="portfolio-section" id="portfolio">
+ <div class="container">
+ <div class="section-head reveal">
+ <div>
+ <p class="section-kicker">Portfolio</p>
+ <h2 class="section-title">Our active businesses and products.</h2>
+ </div>
+ <p class="section-copy">
+ Twelve focused products across consumer services, public-benefit technology, property,
+ workforce, health awareness, beauty technology, civic operations, education, and digital marketplaces.
+ </p>
+ </div>
 
-        <div class="portfolio-grid">
-          <article class="venture-card reveal" style="--accent: var(--orange);">
-            <div class="venture-top">
-              <div class="venture-mark">FH</div>
-              <span class="status">Live</span>
-            </div>
-            <div class="venture-body">
-              <p class="venture-sector">Home Electrification</p>
-              <h3 class="venture-name">FuseHarbor</h3>
-              <p class="venture-description">
-                A structured marketplace helping homeowners begin EV charger, electrical panel,
-                heat pump, and backup-power projects with greater clarity, trust, and organization.
-              </p>
-            </div>
-            <div class="venture-meta">
-              <span class="tag">Web Platform</span>
-              <span class="tag mobile">iOS + Android</span>
-            </div>
-            <div class="venture-links">
-              <a class="venture-link" href="https://www.fuseharbor.org" target="_blank" rel="noopener noreferrer">Website</a>
-              <a class="venture-link" href="https://apps.apple.com/us/app/fuseharbor/id6767947866" target="_blank" rel="noopener noreferrer">App Store</a>
-              <a class="venture-link" href="https://play.google.com/store/apps/details?id=org.fuseharbor.app" target="_blank" rel="noopener noreferrer">Google Play</a>
-            </div>
-          </article>
+ <div class="portfolio-grid">
+ <article class="venture-card reveal" style="--accent: var(--orange);">
+ <div class="venture-top">
+ <div class="venture-mark">FH</div>
+ <span class="status">Live</span>
+ </div>
+ <div class="venture-body">
+ <p class="venture-sector">Home Electrification</p>
+ <h3 class="venture-name">FuseHarbor</h3>
+ <p class="venture-description">
+ A structured marketplace helping homeowners begin EV charger, electrical panel,
+ heat pump, and backup-power projects with greater clarity, trust, and organization.
+ </p>
+ </div>
+ <div class="venture-meta">
+ <span class="tag">Web Platform</span>
+ <span class="tag mobile">iOS + Android</span>
+ </div>
+ <div class="venture-links">
+ <a class="venture-link" href="https://www.fuseharbor.org" target="_blank" rel="noopener noreferrer">Website</a>
+ <a class="venture-link" href="https://apps.apple.com/us/app/fuseharbor/id6767947866" target="_blank" rel="noopener noreferrer">App Store</a>
+ <a class="venture-link" href="https://play.google.com/store/apps/details?id=org.fuseharbor.app" target="_blank" rel="noopener noreferrer">Google Play</a>
+ </div>
+ </article>
 
-          <article class="venture-card reveal" style="--accent: var(--purple);">
-            <div class="venture-top">
-              <div class="venture-mark">KV</div>
-              <span class="status">Live</span>
-            </div>
-            <div class="venture-body">
-              <p class="venture-sector">Property Technology</p>
-              <h3 class="venture-name">Keyvera</h3>
-              <p class="venture-description">
-                A Lagos-focused property marketplace built around verified roles, professionally
-                presented listings, structured inspections, transparent fees, and operational oversight.
-              </p>
-            </div>
-            <div class="venture-meta">
-              <span class="tag">Web Platform</span>
-              <span class="tag">Verified Listings</span>
-            </div>
-            <div class="venture-links">
-              <a class="venture-link" href="https://www.keyvera.org" target="_blank" rel="noopener noreferrer">Website</a>
-            </div>
-          </article>
+ <article class="venture-card reveal" style="--accent: var(--purple);">
+ <div class="venture-top">
+ <div class="venture-mark">KV</div>
+ <span class="status">Live</span>
+ </div>
+ <div class="venture-body">
+ <p class="venture-sector">Property Technology</p>
+ <h3 class="venture-name">Keyvera</h3>
+ <p class="venture-description">
+ A Lagos-focused property marketplace built around verified roles, professionally
+ presented listings, structured inspections, transparent fees, and operational oversight.
+ </p>
+ </div>
+ <div class="venture-meta">
+ <span class="tag">Web Platform</span>
+ <span class="tag">Verified Listings</span>
+ </div>
+ <div class="venture-links">
+ <a class="venture-link" href="https://www.keyvera.org" target="_blank" rel="noopener noreferrer">Website</a>
+ </div>
+ </article>
 
-          <article class="venture-card reveal" style="--accent: var(--teal);">
-            <div class="venture-top">
-              <div class="venture-mark">MR</div>
-              <span class="status">Live</span>
-            </div>
-            <div class="venture-body">
-              <p class="venture-sector">Health Access</p>
-              <h3 class="venture-name">MedicaidReady</h3>
-              <p class="venture-description">
-                A free nationwide screening tool that helps individuals and families understand
-                whether they may qualify for Medicaid before beginning an official state application.
-              </p>
-            </div>
-            <div class="venture-meta">
-              <span class="tag">50 States + D.C.</span>
-              <span class="tag mobile">Mobile App</span>
-            </div>
-            <div class="venture-links">
-              <a class="venture-link" href="https://www.medicaidready.org" target="_blank" rel="noopener noreferrer">Website</a>
-              <a class="venture-link" href="https://apps.apple.com/us/app/medicaidready/id6777118006" target="_blank" rel="noopener noreferrer">App Store</a>
-              <a class="venture-link" href="https://play.google.com/store/search?q=MedicaidReady&c=apps" target="_blank" rel="noopener noreferrer">Google Play</a>
-            </div>
-          </article>
+ <article class="venture-card reveal" style="--accent: var(--teal);">
+ <div class="venture-top">
+ <div class="venture-mark">MR</div>
+ <span class="status">Live</span>
+ </div>
+ <div class="venture-body">
+ <p class="venture-sector">Health Access</p>
+ <h3 class="venture-name">MedicaidReady</h3>
+ <p class="venture-description">
+ A free nationwide screening tool that helps individuals and families understand
+ whether they may qualify for Medicaid before beginning an official state application.
+ </p>
+ </div>
+ <div class="venture-meta">
+ <span class="tag">50 States + D.C.</span>
+ <span class="tag mobile">Mobile App</span>
+ </div>
+ <div class="venture-links">
+ <a class="venture-link" href="https://www.medicaidready.org" target="_blank" rel="noopener noreferrer">Website</a>
+ <a class="venture-link" href="https://apps.apple.com/us/app/medicaidready/id6777118006" target="_blank" rel="noopener noreferrer">App Store</a>
+ <a class="venture-link" href="https://play.google.com/store/search?q=MedicaidReady&c=apps" target="_blank" rel="noopener noreferrer">Google Play</a>
+ </div>
+ </article>
 
-          <article class="venture-card reveal" style="--accent: var(--blue-300);">
-            <div class="venture-top">
-              <div class="venture-mark">MC</div>
-              <span class="status">Live</span>
-            </div>
-            <div class="venture-body">
-              <p class="venture-sector">Healthcare Careers</p>
-              <h3 class="venture-name">MedicaidReady Careers</h3>
-              <p class="venture-description">
-                A healthcare, Medicaid, and care-workforce job board helping people find real
-                opportunities across Medicaid operations, eligibility, care management, direct care,
-                healthcare technology, compliance, and related career paths.
-              </p>
-            </div>
-            <div class="venture-meta">
-              <span class="tag">Job Board</span>
-              <span class="tag">Career Support</span>
-            </div>
-            <div class="venture-links">
-              <a class="venture-link" href="https://www.medicaidready.org/careers" target="_blank" rel="noopener noreferrer">Careers Site</a>
-            </div>
-          </article>
+ <article class="venture-card reveal" style="--accent: var(--blue-300);">
+ <div class="venture-top">
+ <div class="venture-mark">MC</div>
+ <span class="status">Live</span>
+ </div>
+ <div class="venture-body">
+ <p class="venture-sector">Healthcare Careers</p>
+ <h3 class="venture-name">MedicaidReady Careers</h3>
+ <p class="venture-description">
+ A healthcare, Medicaid, and care-workforce job board helping people find real
+ opportunities across Medicaid operations, eligibility, care management, direct care,
+ healthcare technology, compliance, and related career paths.
+ </p>
+ </div>
+ <div class="venture-meta">
+ <span class="tag">Job Board</span>
+ <span class="tag">Career Support</span>
+ </div>
+ <div class="venture-links">
+ <a class="venture-link" href="https://www.medicaidready.org/careers" target="_blank" rel="noopener noreferrer">Careers Site</a>
+ </div>
+ </article>
 
-          <article class="venture-card reveal" style="--accent: var(--green);">
-            <div class="venture-top">
-              <div class="venture-mark">HA</div>
-              <span class="status">Live</span>
-            </div>
-            <div class="venture-body">
-              <p class="venture-sector">Aging in Place</p>
-              <h3 class="venture-name">HarborAging</h3>
-              <p class="venture-description">
-                A family-centered platform for organizing home-safety needs, aging-in-place
-                modifications, provider coordination, service requests, and project progress.
-              </p>
-            </div>
-            <div class="venture-meta">
-              <span class="tag">Web Platform</span>
-              <span class="tag mobile">iOS + Android</span>
-            </div>
-            <div class="venture-links">
-              <a class="venture-link" href="https://www.harboraging.com" target="_blank" rel="noopener noreferrer">Website</a>
-              <a class="venture-link" href="https://apps.apple.com/ng/app/harboraging/id6766133021" target="_blank" rel="noopener noreferrer">App Store</a>
-              <a class="venture-link" href="https://play.google.com/store/apps/details?id=com.harboraging.mobile" target="_blank" rel="noopener noreferrer">Google Play</a>
-            </div>
-          </article>
+ <article class="venture-card reveal" style="--accent: var(--green);">
+ <div class="venture-top">
+ <div class="venture-mark">HA</div>
+ <span class="status">Live</span>
+ </div>
+ <div class="venture-body">
+ <p class="venture-sector">Aging in Place</p>
+ <h3 class="venture-name">HarborAging</h3>
+ <p class="venture-description">
+ A family-centered platform for organizing home-safety needs, aging-in-place
+ modifications, provider coordination, service requests, and project progress.
+ </p>
+ </div>
+ <div class="venture-meta">
+ <span class="tag">Web Platform</span>
+ <span class="tag mobile">iOS + Android</span>
+ </div>
+ <div class="venture-links">
+ <a class="venture-link" href="https://www.harboraging.com" target="_blank" rel="noopener noreferrer">Website</a>
+ <a class="venture-link" href="https://apps.apple.com/ng/app/harboraging/id6766133021" target="_blank" rel="noopener noreferrer">App Store</a>
+ <a class="venture-link" href="https://play.google.com/store/apps/details?id=com.harboraging.mobile" target="_blank" rel="noopener noreferrer">Google Play</a>
+ </div>
+ </article>
 
-          <article class="venture-card featured reveal" style="--accent: var(--blue-300);">
-            <div class="venture-top">
-              <div class="venture-mark">RB</div>
-              <span class="status">Live</span>
-            </div>
-            <div class="venture-body">
-              <p class="venture-sector">Disaster Recovery Coordination</p>
-              <h3 class="venture-name">ReliefBridge</h3>
-              <p class="venture-description">
-                A national recovery-coordination platform designed to help organizations manage
-                survivor cases, referrals, partner capacity, services, and recovery activity through
-                one structured workspace. ReliefBridge connects the organizations doing the work
-                with the people and communities that need support.
-              </p>
-            </div>
-            <div class="venture-meta">
-              <span class="tag">Case Management</span>
-              <span class="tag">Referral Exchange</span>
-              <span class="tag">Partner Coordination</span>
-            </div>
-            <div class="venture-links">
-              <a class="venture-link" href="https://www.reliefbridge.net" target="_blank" rel="noopener noreferrer">Visit ReliefBridge</a>
-            </div>
-          </article>
+ <article class="venture-card featured reveal" style="--accent: var(--blue-300);">
+ <div class="venture-top">
+ <div class="venture-mark">RB</div>
+ <span class="status">Live</span>
+ </div>
+ <div class="venture-body">
+ <p class="venture-sector">Disaster Recovery Coordination</p>
+ <h3 class="venture-name">ReliefBridge</h3>
+ <p class="venture-description">
+ A national recovery-coordination platform designed to help organizations manage
+ survivor cases, referrals, partner capacity, services, and recovery activity through
+ one structured workspace. ReliefBridge connects the organizations doing the work
+ with the people and communities that need support.
+ </p>
+ </div>
+ <div class="venture-meta">
+ <span class="tag">Case Management</span>
+ <span class="tag">Referral Exchange</span>
+ <span class="tag">Partner Coordination</span>
+ </div>
+ <div class="venture-links">
+ <a class="venture-link" href="https://www.reliefbridge.net" target="_blank" rel="noopener noreferrer">Visit ReliefBridge</a>
+ </div>
+ </article>
 
-          <article class="venture-card reveal" style="--accent: var(--purple);">
-            <div class="venture-top">
-              <div class="venture-mark">CF</div>
-              <span class="status">Live</span>
-            </div>
-            <div class="venture-body">
-              <p class="venture-sector">Workflow SaaS</p>
-              <h3 class="venture-name">CivicFlow</h3>
-              <p class="venture-description">
-                A premium workflow SaaS product for intake, case management, document tracking,
-                staff notes, follow-ups, reporting, charts, and Excel exports in one clean workspace.
-              </p>
-            </div>
-            <div class="venture-meta">
-              <span class="tag">SaaS</span>
-              <span class="tag">Case Workflow</span>
-              <span class="tag">Reports</span>
-            </div>
-            <div class="venture-links">
-              <a class="venture-link" href="https://www.civicflowapp.org" target="_blank" rel="noopener noreferrer">Website</a>
-            </div>
-          </article>
+ <article class="venture-card reveal" style="--accent: var(--purple);">
+ <div class="venture-top">
+ <div class="venture-mark">CF</div>
+ <span class="status">Live</span>
+ </div>
+ <div class="venture-body">
+ <p class="venture-sector">Workflow SaaS</p>
+ <h3 class="venture-name">CivicFlow</h3>
+ <p class="venture-description">
+ A premium workflow SaaS product for intake, case management, document tracking,
+ staff notes, follow-ups, reporting, charts, and Excel exports in one clean workspace.
+ </p>
+ </div>
+ <div class="venture-meta">
+ <span class="tag">SaaS</span>
+ <span class="tag">Case Workflow</span>
+ <span class="tag">Reports</span>
+ </div>
+ <div class="venture-links">
+ <a class="venture-link" href="https://www.civicflowapp.org" target="_blank" rel="noopener noreferrer">Website</a>
+ </div>
+ </article>
 
-          <article class="venture-card reveal" style="--accent: var(--rose);">
-            <div class="venture-top">
-              <div class="venture-mark">PW</div>
-              <span class="status">Live</span>
-            </div>
-            <div class="venture-body">
-              <p class="venture-sector">Men's Health Awareness</p>
-              <h3 class="venture-name">ProstateWise</h3>
-              <p class="venture-description">
-                A prostate health awareness platform helping men understand risk factors, learn
-                about PSA screening conversations, prepare for doctor visits, and take early action
-                with confidence. Educational only — not a diagnostic tool.
-              </p>
-            </div>
-            <div class="venture-meta">
-              <span class="tag">Awareness</span>
-              <span class="tag">Risk Education</span>
-            </div>
-            <div class="venture-links">
-              <a class="venture-link" href="https://www.prostatewise.org" target="_blank" rel="noopener noreferrer">Website</a>
-            </div>
-          </article>
+ <article class="venture-card reveal" style="--accent: var(--rose);">
+ <div class="venture-top">
+ <div class="venture-mark">PW</div>
+ <span class="status">Live</span>
+ </div>
+ <div class="venture-body">
+ <p class="venture-sector">Men's Health Awareness</p>
+ <h3 class="venture-name">ProstateWise</h3>
+ <p class="venture-description">
+ A prostate health awareness platform helping men understand risk factors, learn
+ about PSA screening conversations, prepare for doctor visits, and take early action
+ with confidence. Educational only, not a diagnostic tool.
+ </p>
+ </div>
+ <div class="venture-meta">
+ <span class="tag">Awareness</span>
+ <span class="tag">Risk Education</span>
+ </div>
+ <div class="venture-links">
+ <a class="venture-link" href="https://www.prostatewise.org" target="_blank" rel="noopener noreferrer">Website</a>
+ </div>
+ </article>
 
-          <article class="venture-card featured reveal" style="--accent: var(--gold);">
-            <div class="venture-top">
-              <div class="venture-mark">CL</div>
-              <span class="status">Live</span>
-            </div>
-            <div class="venture-body">
-              <p class="venture-sector">Beauty Technology</p>
-              <h3 class="venture-name">CrownLens</h3>
-              <p class="venture-description">
-                CrownLens helps wig and hair-extension buyers check visible quality before they buy
-                by uploading photos of the wig, lace, hairline, ends, cap, or seller listing. It
-                prepares a buyer-friendly visual report reviewing possible concerns like shine
-                pattern, texture consistency, density, lace quality, construction, dryness, frizz,
-                and seller claims. CrownLens does not replace lab testing, but it gives shoppers a
-                practical second look so they can make a more confident purchase decision.
-              </p>
-            </div>
-            <div class="venture-meta">
-              <span class="tag mobile">iOS + Android</span>
-              <span class="tag">Visual Report</span>
-              <span class="tag">Buyer Confidence</span>
-            </div>
-            <div class="venture-links">
-              <a class="venture-link" href="https://apps.apple.com/us/search?term=CrownLens" target="_blank" rel="noopener noreferrer">App Store</a>
-              <a class="venture-link" href="https://play.google.com/store/search?q=CrownLens&c=apps" target="_blank" rel="noopener noreferrer">Google Play</a>
-            </div>
-          </article>
+ <article class="venture-card featured reveal" style="--accent: var(--gold);">
+ <div class="venture-top">
+ <div class="venture-mark">CL</div>
+ <span class="status">Live</span>
+ </div>
+ <div class="venture-body">
+ <p class="venture-sector">Beauty Technology</p>
+ <h3 class="venture-name">CrownLens</h3>
+ <p class="venture-description">
+ CrownLens helps wig and hair-extension buyers check visible quality before they buy
+ by uploading photos of the wig, lace, hairline, ends, cap, or seller listing. It
+ prepares a buyer-friendly visual report reviewing possible concerns like shine
+ pattern, texture consistency, density, lace quality, construction, dryness, frizz,
+ and seller claims. CrownLens does not replace lab testing, but it gives shoppers a
+ practical second look so they can make a more confident purchase decision.
+ </p>
+ </div>
+ <div class="venture-meta">
+ <span class="tag mobile">iOS + Android</span>
+ <span class="tag">Visual Report</span>
+ <span class="tag">Buyer Confidence</span>
+ </div>
+ <div class="venture-links">
+ <a class="venture-link" href="https://apps.apple.com/us/search?term=CrownLens" target="_blank" rel="noopener noreferrer">App Store</a>
+ <a class="venture-link" href="https://play.google.com/store/search?q=CrownLens&c=apps" target="_blank" rel="noopener noreferrer">Google Play</a>
+ </div>
+ </article>
 
-          <article class="venture-card reveal" style="--accent: var(--rose);">
-            <div class="venture-top">
-              <div class="venture-mark">AK</div>
-              <span class="status">Live</span>
-            </div>
-            <div class="venture-body">
-              <p class="venture-sector">Education &amp; Culture</p>
-              <h3 class="venture-name">AfricanKidSpeaks</h3>
-              <p class="venture-description">
-                A kid-friendly language-learning app helping children and families explore Yoruba,
-                Igbo, and Nigerian Pidgin through interactive lessons, native audio, flashcards,
-                games, quizzes, and stories.
-              </p>
-            </div>
-            <div class="venture-meta">
-              <span class="tag mobile">iOS + Android</span>
-              <span class="tag">Free App</span>
-            </div>
-            <div class="venture-links">
-              <a class="venture-link" href="https://apps.apple.com/us/app/africankidspeaks/id6759928644" target="_blank" rel="noopener noreferrer">App Store</a>
-              <a class="venture-link" href="https://play.google.com/store/apps/details?id=com.westforge.africankidspeaks" target="_blank" rel="noopener noreferrer">Google Play</a>
-            </div>
-          </article>
+ <article class="venture-card reveal" style="--accent: var(--rose);">
+ <div class="venture-top">
+ <div class="venture-mark">AK</div>
+ <span class="status">Live</span>
+ </div>
+ <div class="venture-body">
+ <p class="venture-sector">Education &amp; Culture</p>
+ <h3 class="venture-name">AfricanKidSpeaks</h3>
+ <p class="venture-description">
+ A kid-friendly language-learning app helping children and families explore Yoruba,
+ Igbo, and Nigerian Pidgin through interactive lessons, native audio, flashcards,
+ games, quizzes, and stories.
+ </p>
+ </div>
+ <div class="venture-meta">
+ <span class="tag mobile">iOS + Android</span>
+ <span class="tag">Free App</span>
+ </div>
+ <div class="venture-links">
+ <a class="venture-link" href="https://apps.apple.com/us/app/africankidspeaks/id6759928644" target="_blank" rel="noopener noreferrer">App Store</a>
+ <a class="venture-link" href="https://play.google.com/store/apps/details?id=com.westforge.africankidspeaks" target="_blank" rel="noopener noreferrer">Google Play</a>
+ </div>
+ </article>
 
-          <article class="venture-card reveal" style="--accent: var(--gold);">
-            <div class="venture-top">
-              <div class="venture-mark">SB</div>
-              <span class="status">Live</span>
-            </div>
-            <div class="venture-body">
-              <p class="venture-sector">Events &amp; Entertainment</p>
-              <h3 class="venture-name">SpinBook HQ</h3>
-              <p class="venture-description">
-                A modern DJ marketplace connecting clients with professional talent for private
-                events, celebrations, corporate functions, and productions of every scale.
-              </p>
-            </div>
-            <div class="venture-meta">
-              <span class="tag">Marketplace</span>
-              <span class="tag">Event Services</span>
-            </div>
-            <div class="venture-links">
-              <a class="venture-link" href="https://www.spinbookhq.com" target="_blank" rel="noopener noreferrer">Website</a>
-            </div>
-          </article>
+ <article class="venture-card reveal" style="--accent: var(--gold);">
+ <div class="venture-top">
+ <div class="venture-mark">SB</div>
+ <span class="status">Live</span>
+ </div>
+ <div class="venture-body">
+ <p class="venture-sector">Events &amp; Entertainment</p>
+ <h3 class="venture-name">SpinBook HQ</h3>
+ <p class="venture-description">
+ A modern DJ marketplace connecting clients with professional talent for private
+ events, celebrations, corporate functions, and productions of every scale.
+ </p>
+ </div>
+ <div class="venture-meta">
+ <span class="tag">Marketplace</span>
+ <span class="tag">Event Services</span>
+ </div>
+ <div class="venture-links">
+ <a class="venture-link" href="https://www.spinbookhq.com" target="_blank" rel="noopener noreferrer">Website</a>
+ </div>
+ </article>
 
-        </div>
-      </div>
-    </section>
+ </div>
+ </div>
+ </section>
 
-    <section id="mobile">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <p class="section-kicker">Mobile Portfolio</p>
-            <h2 class="section-title">Westforge products, wherever users are.</h2>
-          </div>
-          <p class="section-copy">
-            The portfolio includes mobile experiences across home electrification, healthcare access,
-            aging support, beauty-tech shopping confidence, and cultural education.
-          </p>
-        </div>
+ <section id="mobile">
+ <div class="container">
+ <div class="section-head reveal">
+ <div>
+ <p class="section-kicker">Mobile Portfolio</p>
+ <h2 class="section-title">Westforge products, wherever users are.</h2>
+ </div>
+ <p class="section-copy">
+ The portfolio includes mobile experiences across home electrification, healthcare access,
+ aging support, beauty-tech shopping confidence, and cultural education.
+ </p>
+ </div>
 
-        <div class="apps-grid">
-          <article class="app-tile reveal">
-            <div class="app-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-                <rect x="6" y="2.5" width="12" height="19" rx="2.5" />
-                <path d="M10 5h4M11.5 18.5h1" />
-              </svg>
-            </div>
-            <h3 class="app-name">CrownLens</h3>
-            <p class="app-platforms">Wig and hair-extension photo review for visible buyer-quality checks.</p>
-            <div class="app-links">
-              <a href="https://apps.apple.com/us/search?term=CrownLens" target="_blank" rel="noopener noreferrer">App Store ↗</a>
-              <a href="https://play.google.com/store/search?q=CrownLens&c=apps" target="_blank" rel="noopener noreferrer">Google Play ↗</a>
-            </div>
-          </article>
+ <div class="apps-grid">
+ <article class="app-tile reveal">
+ <div class="app-icon" aria-hidden="true">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+ <rect x="6" y="2.5" width="12" height="19" rx="2.5" />
+ <path d="M10 5h4M11.5 18.5h1" />
+ </svg>
+ </div>
+ <h3 class="app-name">CrownLens</h3>
+ <p class="app-platforms">Wig and hair-extension photo review for visible buyer-quality checks.</p>
+ <div class="app-links">
+ <a href="https://apps.apple.com/us/search?term=CrownLens" target="_blank" rel="noopener noreferrer">App Store ↗</a>
+ <a href="https://play.google.com/store/search?q=CrownLens&c=apps" target="_blank" rel="noopener noreferrer">Google Play ↗</a>
+ </div>
+ </article>
 
-          <article class="app-tile reveal">
-            <div class="app-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-                <rect x="6" y="2.5" width="12" height="19" rx="2.5" />
-                <path d="M10 5h4M11.5 18.5h1" />
-              </svg>
-            </div>
-            <h3 class="app-name">FuseHarbor</h3>
-            <p class="app-platforms">Home electrification intake and project support.</p>
-            <div class="app-links">
-              <a href="https://apps.apple.com/us/app/fuseharbor/id6767947866" target="_blank" rel="noopener noreferrer">App Store ↗</a>
-              <a href="https://play.google.com/store/apps/details?id=org.fuseharbor.app" target="_blank" rel="noopener noreferrer">Google Play ↗</a>
-            </div>
-          </article>
+ <article class="app-tile reveal">
+ <div class="app-icon" aria-hidden="true">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+ <rect x="6" y="2.5" width="12" height="19" rx="2.5" />
+ <path d="M10 5h4M11.5 18.5h1" />
+ </svg>
+ </div>
+ <h3 class="app-name">FuseHarbor</h3>
+ <p class="app-platforms">Home electrification intake and project support.</p>
+ <div class="app-links">
+ <a href="https://apps.apple.com/us/app/fuseharbor/id6767947866" target="_blank" rel="noopener noreferrer">App Store ↗</a>
+ <a href="https://play.google.com/store/apps/details?id=org.fuseharbor.app" target="_blank" rel="noopener noreferrer">Google Play ↗</a>
+ </div>
+ </article>
 
-          <article class="app-tile reveal">
-            <div class="app-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-                <rect x="6" y="2.5" width="12" height="19" rx="2.5" />
-                <path d="M10 5h4M11.5 18.5h1" />
-              </svg>
-            </div>
-            <h3 class="app-name">MedicaidReady</h3>
-            <p class="app-platforms">Fast preliminary Medicaid eligibility screening.</p>
-            <div class="app-links">
-              <a href="https://apps.apple.com/us/app/medicaidready/id6777118006" target="_blank" rel="noopener noreferrer">App Store ↗</a>
-              <a href="https://play.google.com/store/search?q=MedicaidReady&c=apps" target="_blank" rel="noopener noreferrer">Google Play ↗</a>
-            </div>
-          </article>
+ <article class="app-tile reveal">
+ <div class="app-icon" aria-hidden="true">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+ <rect x="6" y="2.5" width="12" height="19" rx="2.5" />
+ <path d="M10 5h4M11.5 18.5h1" />
+ </svg>
+ </div>
+ <h3 class="app-name">MedicaidReady</h3>
+ <p class="app-platforms">Fast preliminary Medicaid eligibility screening.</p>
+ <div class="app-links">
+ <a href="https://apps.apple.com/us/app/medicaidready/id6777118006" target="_blank" rel="noopener noreferrer">App Store ↗</a>
+ <a href="https://play.google.com/store/search?q=MedicaidReady&c=apps" target="_blank" rel="noopener noreferrer">Google Play ↗</a>
+ </div>
+ </article>
 
-          <article class="app-tile reveal">
-            <div class="app-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-                <rect x="6" y="2.5" width="12" height="19" rx="2.5" />
-                <path d="M10 5h4M11.5 18.5h1" />
-              </svg>
-            </div>
-            <h3 class="app-name">HarborAging</h3>
-            <p class="app-platforms">Aging-in-place support and home-safety coordination.</p>
-            <div class="app-links">
-              <a href="https://apps.apple.com/ng/app/harboraging/id6766133021" target="_blank" rel="noopener noreferrer">App Store ↗</a>
-              <a href="https://play.google.com/store/apps/details?id=com.harboraging.mobile" target="_blank" rel="noopener noreferrer">Google Play ↗</a>
-            </div>
-          </article>
+ <article class="app-tile reveal">
+ <div class="app-icon" aria-hidden="true">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+ <rect x="6" y="2.5" width="12" height="19" rx="2.5" />
+ <path d="M10 5h4M11.5 18.5h1" />
+ </svg>
+ </div>
+ <h3 class="app-name">HarborAging</h3>
+ <p class="app-platforms">Aging-in-place support and home-safety coordination.</p>
+ <div class="app-links">
+ <a href="https://apps.apple.com/ng/app/harboraging/id6766133021" target="_blank" rel="noopener noreferrer">App Store ↗</a>
+ <a href="https://play.google.com/store/apps/details?id=com.harboraging.mobile" target="_blank" rel="noopener noreferrer">Google Play ↗</a>
+ </div>
+ </article>
 
-          <article class="app-tile reveal">
-            <div class="app-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-                <rect x="6" y="2.5" width="12" height="19" rx="2.5" />
-                <path d="M10 5h4M11.5 18.5h1" />
-              </svg>
-            </div>
-            <h3 class="app-name">AfricanKidSpeaks</h3>
-            <p class="app-platforms">African language learning for children and families.</p>
-            <div class="app-links">
-              <a href="https://apps.apple.com/us/app/africankidspeaks/id6759928644" target="_blank" rel="noopener noreferrer">App Store ↗</a>
-              <a href="https://play.google.com/store/apps/details?id=com.westforge.africankidspeaks" target="_blank" rel="noopener noreferrer">Google Play ↗</a>
-            </div>
-          </article>
+ <article class="app-tile reveal">
+ <div class="app-icon" aria-hidden="true">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+ <rect x="6" y="2.5" width="12" height="19" rx="2.5" />
+ <path d="M10 5h4M11.5 18.5h1" />
+ </svg>
+ </div>
+ <h3 class="app-name">AfricanKidSpeaks</h3>
+ <p class="app-platforms">African language learning for children and families.</p>
+ <div class="app-links">
+ <a href="https://apps.apple.com/us/app/africankidspeaks/id6759928644" target="_blank" rel="noopener noreferrer">App Store ↗</a>
+ <a href="https://play.google.com/store/apps/details?id=com.westforge.africankidspeaks" target="_blank" rel="noopener noreferrer">Google Play ↗</a>
+ </div>
+ </article>
 
-        </div>
-      </div>
-    </section>
+ </div>
+ </div>
+ </section>
 
-    <hr class="rule" />
+ <hr class="rule" />
 
-    <section id="principles">
-      <div class="container">
-        <div class="reveal">
-          <p class="section-kicker">Operating Principles</p>
-          <h2 class="section-title">How Westforge builds.</h2>
-          <p class="section-copy">
-            The portfolio may span several sectors, but the standard behind every product remains consistent.
-          </p>
-        </div>
+ <section id="principles">
+ <div class="container">
+ <div class="reveal">
+ <p class="section-kicker">Operating Principles</p>
+ <h2 class="section-title">How Westforge builds.</h2>
+ <p class="section-copy">
+ The portfolio may span several sectors, but the standard behind every product remains consistent.
+ </p>
+ </div>
 
-        <div class="principles-grid">
-          <article class="principle reveal">
-            <div class="principle-number">01</div>
-            <h3>Problem First</h3>
-            <p>
-              We begin with a real operational or consumer problem, then build the simplest useful
-              product capable of creating measurable value.
-            </p>
-          </article>
+ <div class="principles-grid">
+ <article class="principle reveal">
+ <div class="principle-number">01</div>
+ <h3>Problem First</h3>
+ <p>
+ We begin with a real operational or consumer problem, then build the simplest useful
+ product capable of creating measurable value.
+ </p>
+ </article>
 
-          <article class="principle reveal">
-            <div class="principle-number">02</div>
-            <h3>Trust by Design</h3>
-            <p>
-              Clear workflows, responsible data practices, and honest product positioning are treated
-              as core infrastructure—not optional finishing touches.
-            </p>
-          </article>
+ <article class="principle reveal">
+ <div class="principle-number">02</div>
+ <h3>Trust by Design</h3>
+ <p>
+ Clear workflows, responsible data practices, and honest product positioning are treated
+ as core infrastructure, not optional finishing touches.
+ </p>
+ </article>
 
-          <article class="principle reveal">
-            <div class="principle-number">03</div>
-            <h3>Long-Term Execution</h3>
-            <p>
-              Products are launched with discipline, improved through real-world use, and expanded only
-              when the foundation is ready to support sustainable growth.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="partner">
-      <div class="container">
-        <div class="contact-panel reveal">
-          <p class="section-kicker">Partnerships &amp; Business Development</p>
-          <h2 class="section-title">Partner with Westforge.</h2>
-          <p class="section-copy">
-            Westforge Holdings Inc. is open to thoughtful partnership conversations with government
-            agencies, corporate teams, private companies, nonprofits, vendors, service providers,
-            investors, and organizations seeking practical digital products, technology collaboration,
-            marketplace partnerships, pilot programs, or portfolio-level business opportunities.
-          </p>
-          <p class="section-copy">
-            We welcome discussions with serious organizations that want to understand who we are,
-            how our products are built, and where our platforms may support real operational,
-            community, commercial, or public-benefit needs. Our approach is professional,
-            direct, and opportunity-focused: define the problem, understand the partnership fit,
-            and explore whether there is a responsible path to work together.
-          </p>
-          <div class="venture-meta" style="margin-top: 28px;">
-            <span class="tag">Government</span>
-            <span class="tag">Corporate</span>
-            <span class="tag">Private Sector</span>
-            <span class="tag">Nonprofit</span>
-            <span class="tag">Vendor Relationships</span>
-            <span class="tag">Strategic Collaboration</span>
-          </div>
-          <div class="hero-actions" style="margin-top: 30px;">
-            <a class="button button-primary" href="mailto:invest@westforgeholdings.com?subject=Westforge%20Partnership%20Inquiry">
-              Start a Partnership Conversation
-            </a>
-            <a class="button button-secondary" href="#portfolio">
-              Review the Portfolio
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="contact-panel reveal">
-          <p class="section-kicker">Business Inquiries</p>
-          <h2 class="section-title">Connect with Westforge Holdings.</h2>
-          <p class="section-copy">
-            For corporate verification, vendor relationships, portfolio questions, and business
-            inquiries, contact the Westforge team. Partnership conversations can also begin through
-            the Partner with Westforge section above.
-          </p>
-          <a class="button button-primary" href="mailto:invest@westforgeholdings.com">
-            invest@westforgeholdings.com
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <div class="footer-brand">
-        <img class="footer-logo" src="data:image/webp;base64,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" alt="" aria-hidden="true" />
-        <div>
-          <div class="footer-name">Westforge Holdings Inc.</div>
-          <div class="footer-copy">© <span id="year">2026</span> All rights reserved.</div>
-        </div>
-      </div>
-
-      <div class="footer-links" aria-label="Portfolio links">
-        <a href="https://www.fuseharbor.org" target="_blank" rel="noopener noreferrer">FuseHarbor</a>
-        <a href="https://www.keyvera.org" target="_blank" rel="noopener noreferrer">Keyvera</a>
-        <a href="https://www.medicaidready.org" target="_blank" rel="noopener noreferrer">MedicaidReady</a>
-        <a href="https://www.medicaidready.org/careers" target="_blank" rel="noopener noreferrer">Careers</a>
-        <a href="https://www.harboraging.com" target="_blank" rel="noopener noreferrer">HarborAging</a>
-        <a href="https://www.reliefbridge.net" target="_blank" rel="noopener noreferrer">ReliefBridge</a>
-        <a href="https://www.civicflowapp.org" target="_blank" rel="noopener noreferrer">CivicFlow</a>
-        <a href="https://www.prostatewise.org" target="_blank" rel="noopener noreferrer">ProstateWise</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const menuButton = document.getElementById("menu-button");
-    const navLinks = document.getElementById("nav-links");
+ <article class="principle reveal">
+ <div class="principle-number">03</div>
+ <h3>Long-Term Execution</h3>
+ <p>
+ Products are launched with discipline, improved through real-world use, and expanded only
+ when the foundation is ready to support sustainable growth.
+ </p>
+ </article>
+ </div>
+ </div>
+ </section>
 
 
-    const heroProducts = [
-      {
-        name: "FuseHarbor",
-        sector: "Home Electrification",
-        description: "A structured marketplace helping homeowners begin EV charger, electrical panel, heat pump, and backup-power projects with greater clarity, trust, and organization.",
-        tags: ["Web Platform", "Mobile App"],
-        url: "https://www.fuseharbor.org"
-      },
-      {
-        name: "Keyvera",
-        sector: "Property Technology",
-        description: "A Lagos-focused property marketplace built around verified roles, professional listings, structured inspections, transparent fees, and operational oversight.",
-        tags: ["Web Platform", "Property Marketplace"],
-        url: "https://www.keyvera.org"
-      },
-      {
-        name: "MedicaidReady",
-        sector: "Health Access",
-        description: "A free nationwide screening tool that helps individuals and families understand whether they may qualify for Medicaid before beginning an official state application.",
-        tags: ["50 States + D.C.", "Mobile App"],
-        url: "https://www.medicaidready.org"
-      },
-      {
-        name: "MedicaidReady Careers",
-        sector: "Workforce & Careers",
-        description: "A career-support platform built to help people prepare for real jobs, improve readiness, and move toward practical employment opportunities.",
-        tags: ["Career Support", "Job Readiness"],
-        url: "https://www.medicaidready.org/careers"
-      },
-      {
-        name: "HarborAging",
-        sector: "Aging in Place",
-        description: "A family-centered platform for organizing home-safety needs, aging-in-place modifications, provider coordination, service requests, and project progress.",
-        tags: ["Web Platform", "iOS + Android"],
-        url: "https://www.harboraging.com"
-      },
-      {
-        name: "ReliefBridge",
-        sector: "Disaster Recovery",
-        description: "A national recovery-coordination platform for survivor cases, referrals, partner capacity, services, and recovery activity in one structured workspace.",
-        tags: ["Case Management", "Referral Exchange"],
-        url: "https://www.reliefbridge.net"
-      },
-      {
-        name: "CivicFlow",
-        sector: "Civic Workflow SaaS",
-        description: "A professional case, intake, workflow, and reporting platform built for civic, public-service, and organizational operations.",
-        tags: ["SaaS", "Reports + Workflows"],
-        url: "https://www.civicflowapp.org"
-      },
-      {
-        name: "ProstateWise",
-        sector: "Men's Health Awareness",
-        description: "A prostate health awareness platform focused on early-risk education, PSA reminders, doctor conversations, and practical next-step guidance.",
-        tags: ["Awareness", "Health Education"],
-        url: "https://www.prostatewise.org"
-      },
-      {
-        name: "CrownLens",
-        sector: "Beauty Technology",
-        description: "A mobile visual-check tool that helps wig and hair-extension buyers review visible quality concerns before purchase using uploaded photos or seller listings.",
-        tags: ["iOS + Android", "AI Visual Report"],
-        url: "#portfolio"
-      },
-      {
-        name: "AfricanKidSpeaks",
-        sector: "Education & Culture",
-        description: "A kid-friendly African language-learning app helping children and families explore Yoruba, Igbo, and Nigerian Pidgin through interactive lessons and stories.",
-        tags: ["iOS + Android", "Language Learning"],
-        url: "https://apps.apple.com/us/app/africankidspeaks/id6759928644"
-      },
-      {
-        name: "SpinBook HQ",
-        sector: "Events & Entertainment",
-        description: "A modern DJ marketplace connecting clients with professional talent for private events, celebrations, corporate functions, and productions of every scale.",
-        tags: ["Marketplace", "Event Services"],
-        url: "https://www.spinbookhq.com"
-      }
-    ];
+ <section id="partner">
+ <div class="container">
+ <div class="contact-panel reveal">
+ <p class="section-kicker">Partnerships &amp; Business Development</p>
+ <h2 class="section-title">Partner with Westforge.</h2>
+ <p class="section-copy">
+ Westforge Holdings Inc. is open to thoughtful partnership conversations with government
+ agencies, corporate teams, private companies, nonprofits, vendors, service providers,
+ investors, and organizations seeking practical digital products, technology collaboration,
+ marketplace partnerships, pilot programs, or portfolio-level business opportunities.
+ </p>
+ <p class="section-copy">
+ We welcome discussions with serious organizations that want to understand who we are,
+ how our products are built, and where our platforms may support real operational,
+ community, commercial, or public-benefit needs. Our approach is professional,
+ direct, and opportunity-focused: define the problem, understand the partnership fit,
+ and explore whether there is a responsible path to work together.
+ </p>
+ <div class="venture-meta" style="margin-top: 28px;">
+ <span class="tag">Government</span>
+ <span class="tag">Corporate</span>
+ <span class="tag">Private Sector</span>
+ <span class="tag">Nonprofit</span>
+ <span class="tag">Vendor Relationships</span>
+ <span class="tag">Strategic Collaboration</span>
+ </div>
+ <div class="hero-actions" style="margin-top: 30px;">
+ <a class="button button-primary" href="mailto:invest@westforgeholdings.com?subject=Westforge%20Partnership%20Inquiry">
+ Start a Partnership Conversation
+ </a>
+ <a class="button button-secondary" href="#portfolio">
+ Review the Portfolio
+ </a>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    const productCard = document.getElementById("product-hero-card");
-    const productNumber = document.getElementById("product-hero-number");
-    const productSector = document.getElementById("product-hero-sector");
-    const productName = document.getElementById("product-hero-name");
-    const productDescription = document.getElementById("product-hero-description");
-    const productTags = document.getElementById("product-hero-tags");
-    const productLink = document.getElementById("product-hero-link");
-    const productDots = document.getElementById("product-hero-dots");
-    let activeProductIndex = 0;
-    let productRotationTimer;
+ <section id="contact">
+ <div class="container">
+ <div class="contact-panel reveal">
+ <p class="section-kicker">Business Inquiries</p>
+ <h2 class="section-title">Connect with Westforge Holdings.</h2>
+ <p class="section-copy">
+ For corporate verification, vendor relationships, portfolio questions, and business
+ inquiries, contact the Westforge team. Partnership conversations can also begin through
+ the Partner with Westforge section above.
+ </p>
+ <a class="button button-primary" href="mailto:invest@westforgeholdings.com">
+ invest@westforgeholdings.com
+ </a>
+ </div>
+ </div>
+ </section>
+ </main>
 
-    function renderProduct(index) {
-      const product = heroProducts[index];
-      productCard.classList.add("is-changing");
+ <footer class="site-footer">
+ <div class="container footer-row">
+ <div class="footer-brand">
+ <img class="footer-logo" src="data:image/webp;base64,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" alt="" aria-hidden="true" />
+ <div>
+ <div class="footer-name">Westforge Holdings Inc.</div>
+ <div class="footer-copy">© <span id="year">2026</span> All rights reserved.</div>
+ </div>
+ </div>
 
-      window.setTimeout(() => {
-        productNumber.textContent = `${String(index + 1).padStart(2, "0")} / ${heroProducts.length}`;
-        productSector.textContent = product.sector;
-        productName.textContent = product.name;
-        productDescription.textContent = product.description;
-        productTags.innerHTML = product.tags.map((tag) => `<span>${tag}</span>`).join("");
-        productLink.href = product.url;
-        productLink.textContent = product.url === "#portfolio" ? "View in Portfolio" : "View Product";
+ <div class="footer-links" aria-label="Portfolio links">
+ <a href="https://www.fuseharbor.org" target="_blank" rel="noopener noreferrer">FuseHarbor</a>
+ <a href="https://www.keyvera.org" target="_blank" rel="noopener noreferrer">Keyvera</a>
+ <a href="https://www.medicaidready.org" target="_blank" rel="noopener noreferrer">MedicaidReady</a>
+ <a href="https://www.medicaidready.org/careers" target="_blank" rel="noopener noreferrer">Careers</a>
+ <a href="https://www.harboraging.com" target="_blank" rel="noopener noreferrer">HarborAging</a>
+ <a href="https://www.reliefbridge.net" target="_blank" rel="noopener noreferrer">ReliefBridge</a>
+ <a href="https://www.civicflowapp.org" target="_blank" rel="noopener noreferrer">CivicFlow</a>
+ <a href="https://www.prostatewise.org" target="_blank" rel="noopener noreferrer">ProstateWise</a>
+        <a href="https://www.hometruth.us" target="_blank" rel="noopener noreferrer">HomeTruth</a>
+ </div>
+ </div>
+ </footer>
 
-        productDots.querySelectorAll("button").forEach((dot, dotIndex) => {
-          dot.classList.toggle("active", dotIndex === index);
-          dot.setAttribute("aria-pressed", String(dotIndex === index));
-        });
+ <script>
+ const menuButton = document.getElementById("menu-button");
+ const navLinks = document.getElementById("nav-links");
 
-        productCard.classList.remove("is-changing");
-      }, 220);
-    }
 
-    function startProductRotation() {
-      window.clearInterval(productRotationTimer);
-      productRotationTimer = window.setInterval(() => {
-        activeProductIndex = (activeProductIndex + 1) % heroProducts.length;
-        renderProduct(activeProductIndex);
-      }, 4200);
-    }
+ const heroProducts = [
+ {
+ name: "FuseHarbor",
+ sector: "Home Electrification",
+ description: "A structured marketplace helping homeowners begin EV charger, electrical panel, heat pump, and backup-power projects with greater clarity, trust, and organization.",
+ tags: ["Web Platform", "Mobile App"],
+ url: "https://www.fuseharbor.org"
+ },
+ {
+ name: "Keyvera",
+ sector: "Property Technology",
+ description: "A Lagos-focused property marketplace built around verified roles, professional listings, structured inspections, transparent fees, and operational oversight.",
+ tags: ["Web Platform", "Property Marketplace"],
+ url: "https://www.keyvera.org"
+ },
+ {
+ name: "MedicaidReady",
+ sector: "Health Access",
+ description: "A free nationwide screening tool that helps individuals and families understand whether they may qualify for Medicaid before beginning an official state application.",
+ tags: ["50 States + D.C.", "Mobile App"],
+ url: "https://www.medicaidready.org"
+ },
+ {
+ name: "MedicaidReady Careers",
+ sector: "Workforce & Careers",
+ description: "A career-support platform built to help people prepare for real jobs, improve readiness, and move toward practical employment opportunities.",
+ tags: ["Career Support", "Job Readiness"],
+ url: "https://www.medicaidready.org/careers"
+ },
+ {
+ name: "HarborAging",
+ sector: "Aging in Place",
+ description: "A family-centered platform for organizing home-safety needs, aging-in-place modifications, provider coordination, service requests, and project progress.",
+ tags: ["Web Platform", "iOS + Android"],
+ url: "https://www.harboraging.com"
+ },
+ {
+ name: "ReliefBridge",
+ sector: "Disaster Recovery",
+ description: "A national recovery-coordination platform for survivor cases, referrals, partner capacity, services, and recovery activity in one structured workspace.",
+ tags: ["Case Management", "Referral Exchange"],
+ url: "https://www.reliefbridge.net"
+ },
+ {
+ name: "CivicFlow",
+ sector: "Civic Workflow SaaS",
+ description: "A professional case, intake, workflow, and reporting platform built for civic, public-service, and organizational operations.",
+ tags: ["SaaS", "Reports + Workflows"],
+ url: "https://www.civicflowapp.org"
+ },
+ {
+ name: "ProstateWise",
+ sector: "Men's Health Awareness",
+ description: "A prostate health awareness platform focused on early-risk education, PSA reminders, doctor conversations, and practical next-step guidance.",
+ tags: ["Awareness", "Health Education"],
+ url: "https://www.prostatewise.org"
+ },
+ {
+ name: "CrownLens",
+ sector: "Beauty Technology",
+ description: "A mobile visual-check tool that helps wig and hair-extension buyers review visible quality concerns before purchase using uploaded photos or seller listings.",
+ tags: ["iOS + Android", "AI Visual Report"],
+ url: "#portfolio"
+ },
+ {
+ name: "AfricanKidSpeaks",
+ sector: "Education & Culture",
+ description: "A kid-friendly African language-learning app helping children and families explore Yoruba, Igbo, and Nigerian Pidgin through interactive lessons and stories.",
+ tags: ["iOS + Android", "Language Learning"],
+ url: "https://apps.apple.com/us/app/africankidspeaks/id6759928644"
+ },
+ {
+ name: "SpinBook HQ",
+ sector: "Events & Entertainment",
+ description: "A modern DJ marketplace connecting clients with professional talent for private events, celebrations, corporate functions, and productions of every scale.",
+ tags: ["Marketplace", "Event Services"],
+ url: "https://www.spinbookhq.com"
+ }
+ ];
 
-    heroProducts.forEach((product, index) => {
-      const dot = document.createElement("button");
-      dot.type = "button";
-      dot.className = `product-dot${index === 0 ? " active" : ""}`;
-      dot.setAttribute("aria-label", `Show ${product.name}`);
-      dot.setAttribute("aria-pressed", String(index === 0));
-      dot.addEventListener("click", () => {
-        activeProductIndex = index;
-        renderProduct(activeProductIndex);
-        startProductRotation();
-      });
-      productDots.appendChild(dot);
-    });
+ const productCard = document.getElementById("product-hero-card");
+ const productNumber = document.getElementById("product-hero-number");
+ const productSector = document.getElementById("product-hero-sector");
+ const productName = document.getElementById("product-hero-name");
+ const productDescription = document.getElementById("product-hero-description");
+ const productTags = document.getElementById("product-hero-tags");
+ const productLink = document.getElementById("product-hero-link");
+ const productDots = document.getElementById("product-hero-dots");
+ let activeProductIndex = 0;
+ let productRotationTimer;
 
-    startProductRotation();
+ function renderProduct(index) {
+ const product = heroProducts[index];
+ productCard.classList.add("is-changing");
 
-    menuButton.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-      menuButton.setAttribute("aria-expanded", String(isOpen));
-      menuButton.setAttribute(
-        "aria-label",
-        isOpen ? "Close navigation menu" : "Open navigation menu"
-      );
-    });
+ window.setTimeout(() => {
+ productNumber.textContent = `${String(index + 1).padStart(2, "0")} / ${heroProducts.length}`;
+ productSector.textContent = product.sector;
+ productName.textContent = product.name;
+ productDescription.textContent = product.description;
+ productTags.innerHTML = product.tags.map((tag) => `<span>${tag}</span>`).join("");
+ productLink.href = product.url;
+ productLink.textContent = product.url === "#portfolio" ? "View in Portfolio" : "View Product";
 
-    navLinks.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.setAttribute("aria-label", "Open navigation menu");
-      });
-    });
+ productDots.querySelectorAll("button").forEach((dot, dotIndex) => {
+ dot.classList.toggle("active", dotIndex === index);
+ dot.setAttribute("aria-pressed", String(dotIndex === index));
+ });
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+ productCard.classList.remove("is-changing");
+ }, 220);
+ }
 
-    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+ function startProductRotation() {
+ window.clearInterval(productRotationTimer);
+ productRotationTimer = window.setInterval(() => {
+ activeProductIndex = (activeProductIndex + 1) % heroProducts.length;
+ renderProduct(activeProductIndex);
+ }, 4200);
+ }
+
+ heroProducts.forEach((product, index) => {
+ const dot = document.createElement("button");
+ dot.type = "button";
+ dot.className = `product-dot${index === 0 ? " active" : ""}`;
+ dot.setAttribute("aria-label", `Show ${product.name}`);
+ dot.setAttribute("aria-pressed", String(index === 0));
+ dot.addEventListener("click", () => {
+ activeProductIndex = index;
+ renderProduct(activeProductIndex);
+ startProductRotation();
+ });
+ productDots.appendChild(dot);
+ });
+
+ startProductRotation();
+
+ menuButton.addEventListener("click", () => {
+ const isOpen = navLinks.classList.toggle("open");
+ menuButton.setAttribute("aria-expanded", String(isOpen));
+ menuButton.setAttribute(
+ "aria-label",
+ isOpen ? "Close navigation menu" : "Open navigation menu"
+ );
+ });
+
+ navLinks.querySelectorAll("a").forEach((link) => {
+ link.addEventListener("click", () => {
+ navLinks.classList.remove("open");
+ menuButton.setAttribute("aria-expanded", "false");
+ menuButton.setAttribute("aria-label", "Open navigation menu");
+ });
+ });
+
+ const observer = new IntersectionObserver(
+ (entries) => {
+ entries.forEach((entry) => {
+ if (entry.isIntersecting) {
+ entry.target.classList.add("visible");
+ observer.unobserve(entry.target);
+ }
+ });
+ },
+ { threshold: 0.1 }
+ );
+
+ document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+ document.getElementById("year").textContent = new Date().getFullYear();
+ </script>
 </body>
 </html>
