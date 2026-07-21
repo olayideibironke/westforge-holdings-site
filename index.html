@@ -1295,6 +1295,10 @@
  display: block;
  }
 
+ #partner-submitted:target {
+ display: block;
+ }
+
  .partner-result h3 {
  margin-bottom: 8px;
  color: var(--silver-100);
@@ -2330,31 +2334,35 @@
  Tell us what you want to explore.
  </h3>
  <p class="form-note">
- This form prepares a clean partnership inquiry on the page. It does not send automatically,
- so visitors can review their message, copy it, and contact Westforge directly without relying
- on a local email app opening correctly.
+ This inquiry form sends partnership submissions directly to Westforge by email.
+ The first live submission may require email confirmation to activate the form service.
  </p>
 
- <form class="partner-form" id="westforge-partner-form">
+ <form class="partner-form" id="westforge-partner-form" action="https://formsubmit.co/invest@westforgeholdings.com" method="POST">
+ <input type="hidden" name="_subject" value="New Westforge Partnership Inquiry" />
+ <input type="hidden" name="_template" value="table" />
+ <input type="hidden" name="_next" value="https://www.westforgeholdings.com/#partner-submitted" />
+ <input type="hidden" name="_autoresponse" value="Thank you for contacting Westforge Holdings Inc. Your partnership inquiry has been received. Our team will review the information and follow up if there is a responsible path for discussion." />
+ <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
  <div class="partner-form-grid">
  <label class="form-field">
  <span class="form-label">Name</span>
- <input class="form-input" id="partner-name" name="name" type="text" placeholder="Your full name" required />
+ <input class="form-input" id="partner-name" name="Name" type="text" placeholder="Your full name" required />
  </label>
 
  <label class="form-field">
  <span class="form-label">Organization</span>
- <input class="form-input" id="partner-organization" name="organization" type="text" placeholder="Agency, company, nonprofit, or team" required />
+ <input class="form-input" id="partner-organization" name="Organization" type="text" placeholder="Agency, company, nonprofit, or team" required />
  </label>
 
  <label class="form-field">
  <span class="form-label">Email</span>
- <input class="form-input" id="partner-email" name="email" type="email" placeholder="name@example.com" required />
+ <input class="form-input" id="partner-email" name="Email" type="email" placeholder="name@example.com" required />
  </label>
 
  <label class="form-field">
  <span class="form-label">Partner Type</span>
- <select class="form-select" id="partner-type" name="partnerType" required>
+ <select class="form-select" id="partner-type" name="Partner Type" required>
  <option value="">Select one</option>
  <option>Government agency</option>
  <option>Corporate team</option>
@@ -2368,7 +2376,7 @@
 
  <label class="form-field full">
  <span class="form-label">Area of Interest</span>
- <select class="form-select" id="partner-interest" name="interest" required>
+ <select class="form-select" id="partner-interest" name="Area of Interest" required>
  <option value="">Select one</option>
  <option>Technology partnership</option>
  <option>Government or public-sector collaboration</option>
@@ -2383,31 +2391,23 @@
 
  <label class="form-field full">
  <span class="form-label">Message</span>
- <textarea class="form-textarea" id="partner-message" name="message" placeholder="Briefly explain what you want to discuss, the product or sector involved, and what a successful conversation would cover." required></textarea>
+ <textarea class="form-textarea" id="partner-message" name="Message" placeholder="Briefly explain what you want to discuss, the product or sector involved, and what a successful conversation would cover." required></textarea>
  </label>
  </div>
 
  <button class="button button-primary" type="submit">
- Prepare Partnership Inquiry
+ Submit Partnership Inquiry
  </button>
  </form>
 
- <div class="partner-result" id="partner-result" aria-live="polite">
- <h3>Your partnership inquiry is ready.</h3>
+ <div class="partner-result" id="partner-submitted" aria-live="polite">
+ <h3>Partnership inquiry submitted.</h3>
  <p>
- Copy the prepared message and send it to
+ Thank you for reaching out to Westforge Holdings Inc. If this is the first submission through
+ this form, Westforge may receive a quick activation email from the form provider before future
+ inquiries are delivered automatically. For urgent matters, contact
  <a class="partner-email" href="mailto:invest@westforgeholdings.com">invest@westforgeholdings.com</a>.
- You can also use the email button below if your device has email configured.
  </p>
- <div class="partner-result-actions">
- <button class="button button-primary" type="button" id="copy-partner-message">
- Copy Prepared Message
- </button>
- <a class="button button-secondary" id="email-partner-message" href="mailto:invest@westforgeholdings.com">
- Open Email
- </a>
- </div>
- </div>
  </div>
  </div>
  </div>
@@ -2658,77 +2658,6 @@
  );
 
  document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
-
- const partnerForm = document.getElementById("westforge-partner-form");
- const partnerResult = document.getElementById("partner-result");
- const copyPartnerMessage = document.getElementById("copy-partner-message");
- const emailPartnerMessage = document.getElementById("email-partner-message");
- let preparedPartnerMessage = "";
-
- function buildPartnerMessage() {
- const name = document.getElementById("partner-name").value.trim();
- const organization = document.getElementById("partner-organization").value.trim();
- const email = document.getElementById("partner-email").value.trim();
- const partnerType = document.getElementById("partner-type").value.trim();
- const interest = document.getElementById("partner-interest").value.trim();
- const message = document.getElementById("partner-message").value.trim();
-
- return `Westforge Partnership Inquiry
-
-Name: ${name}
-Organization: ${organization}
-Email: ${email}
-Partner Type: ${partnerType}
-Area of Interest: ${interest}
-
-Message:
-${message}
-
-Requested next step:
-Please contact me to discuss whether there is a responsible path for partnership, business development, vendor relationship, pilot program, or strategic collaboration with Westforge Holdings Inc.`;
- }
-
- async function copyTextToClipboard(text) {
- if (navigator.clipboard && window.isSecureContext) {
- await navigator.clipboard.writeText(text);
- return true;
- }
-
- const textarea = document.createElement("textarea");
- textarea.value = text;
- textarea.setAttribute("readonly", "");
- textarea.style.position = "fixed";
- textarea.style.left = "-9999px";
- document.body.appendChild(textarea);
- textarea.select();
- const successful = document.execCommand("copy");
- document.body.removeChild(textarea);
- return successful;
- }
-
- partnerForm.addEventListener("submit", async (event) => {
- event.preventDefault();
- preparedPartnerMessage = buildPartnerMessage();
- const subject = encodeURIComponent("Westforge Partnership Inquiry");
- const body = encodeURIComponent(preparedPartnerMessage);
- emailPartnerMessage.href = `mailto:invest@westforgeholdings.com?subject=${subject}&body=${body}`;
- partnerResult.classList.add("visible");
- await copyTextToClipboard(preparedPartnerMessage);
- copyPartnerMessage.textContent = "Copied Message";
- partnerResult.scrollIntoView({ behavior: "smooth", block: "center" });
- });
-
- copyPartnerMessage.addEventListener("click", async () => {
- if (!preparedPartnerMessage) {
- preparedPartnerMessage = buildPartnerMessage();
- }
- await copyTextToClipboard(preparedPartnerMessage);
- copyPartnerMessage.textContent = "Copied Message";
- window.setTimeout(() => {
- copyPartnerMessage.textContent = "Copy Prepared Message";
- }, 2200);
- });
-
 
  document.getElementById("year").textContent = new Date().getFullYear();
  </script>
