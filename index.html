@@ -1295,6 +1295,16 @@
  display: block;
  }
 
+ .partner-result.error {
+ border-color: rgba(239, 127, 157, 0.34);
+ background: rgba(239, 127, 157, 0.075);
+ }
+
+ .partner-form.is-sending {
+ opacity: 0.72;
+ pointer-events: none;
+ }
+
  #partner-submitted:target {
  display: block;
  }
@@ -2334,15 +2344,14 @@
  Tell us what you want to explore.
  </h3>
  <p class="form-note">
- This inquiry form sends partnership submissions directly to Westforge by email.
- The first live submission may require email confirmation to activate the form service.
+ This inquiry form sends partnership submissions directly to Westforge by email while keeping
+ visitors on the Westforge website. The first live submission may require email confirmation
+ to activate the form service.
  </p>
 
- <form class="partner-form" id="westforge-partner-form" action="https://formsubmit.co/invest@westforgeholdings.com" method="POST">
+ <form class="partner-form" id="westforge-partner-form" action="https://formsubmit.co/ajax/invest@westforgeholdings.com" method="POST">
  <input type="hidden" name="_subject" value="New Westforge Partnership Inquiry" />
  <input type="hidden" name="_template" value="table" />
- <input type="hidden" name="_next" value="https://www.westforgeholdings.com/#partner-submitted" />
- <input type="hidden" name="_autoresponse" value="Thank you for contacting Westforge Holdings Inc. Your partnership inquiry has been received. Our team will review the information and follow up if there is a responsible path for discussion." />
  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
  <div class="partner-form-grid">
  <label class="form-field">
@@ -2401,12 +2410,11 @@
  </form>
 
  <div class="partner-result" id="partner-submitted" aria-live="polite">
- <h3>Partnership inquiry submitted.</h3>
- <p>
- Thank you for reaching out to Westforge Holdings Inc. If this is the first submission through
- this form, Westforge may receive a quick activation email from the form provider before future
- inquiries are delivered automatically. For urgent matters, contact
- <a class="partner-email" href="mailto:invest@westforgeholdings.com">invest@westforgeholdings.com</a>.
+ <h3 id="partner-result-title">Thank you for reaching out.</h3>
+ <p id="partner-result-message">
+ Your partnership inquiry has been received by Westforge Holdings Inc. A member of our team
+ will review your message and follow up if there is a suitable opportunity to continue the
+ conversation. We appreciate your interest in working with Westforge.
  </p>
  </div>
  </div>
@@ -2659,7 +2667,59 @@
 
  document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
 
- document.getElementById("year").textContent = new Date().getFullYear();
+ 
+const westforgePartnerForm = document.getElementById("westforge-partner-form");
+const westforgePartnerResult = document.getElementById("partner-submitted");
+const westforgePartnerResultTitle = document.getElementById("partner-result-title");
+const westforgePartnerResultMessage = document.getElementById("partner-result-message");
+
+westforgePartnerForm.addEventListener("submit", async (event) => {
+ event.preventDefault();
+
+ const submitButton = westforgePartnerForm.querySelector('button[type="submit"]');
+ const originalButtonText = submitButton.textContent;
+
+ westforgePartnerForm.classList.add("is-sending");
+ submitButton.textContent = "Sending...";
+
+ const formData = new FormData(westforgePartnerForm);
+ const payload = Object.fromEntries(formData.entries());
+
+ try {
+ const response = await fetch(westforgePartnerForm.action, {
+ method: "POST",
+ headers: {
+ "Content-Type": "application/json",
+ "Accept": "application/json"
+ },
+ body: JSON.stringify(payload)
+ });
+
+ if (!response.ok) {
+ throw new Error("The form provider returned an error.");
+ }
+
+ westforgePartnerForm.reset();
+ westforgePartnerResult.classList.remove("error");
+ westforgePartnerResult.classList.add("visible");
+ westforgePartnerResultTitle.textContent = "Thank you for reaching out.";
+ westforgePartnerResultMessage.innerHTML =
+ "Your partnership inquiry has been received by Westforge Holdings Inc. A member of our team will review your message and follow up if there is a suitable opportunity to continue the conversation. We appreciate your interest in working with Westforge.";
+ window.location.hash = "partner-submitted";
+ } catch (error) {
+ westforgePartnerResult.classList.add("visible", "error");
+ westforgePartnerResultTitle.textContent = "We could not submit the inquiry yet.";
+ westforgePartnerResultMessage.innerHTML =
+ 'Please try again in a moment. If the issue continues, contact <a class="partner-email" href="mailto:invest@westforgeholdings.com">invest@westforgeholdings.com</a> directly and our team will review your message.';
+ window.location.hash = "partner-submitted";
+ } finally {
+ westforgePartnerForm.classList.remove("is-sending");
+ submitButton.textContent = originalButtonText;
+ }
+});
+
+
+document.getElementById("year").textContent = new Date().getFullYear();
  </script>
 </body>
 </html>
