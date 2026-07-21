@@ -1712,6 +1712,215 @@
  "description": "Parent company behind a growing portfolio of digital platforms, SaaS products, public-benefit tools, and mobile products."
  }
  </script>
+
+  <style id="westforge-responsive-shell-fix">
+    :root {
+      --shell-max: 1560px;
+      --shell-pad: clamp(20px, 4vw, 72px);
+    }
+
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: clip;
+    }
+
+    main,
+    section,
+    header,
+    footer {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .container {
+      width: min(var(--shell-max), calc(100% - (var(--shell-pad) * 2))) !important;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .nav {
+      gap: clamp(18px, 2.4vw, 42px);
+    }
+
+    .nav-links {
+      gap: clamp(18px, 2vw, 34px);
+    }
+
+    .hero {
+      padding: clamp(118px, 10vw, 150px) 0 clamp(76px, 7vw, 104px);
+    }
+
+    .hero-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(460px, 0.86fr);
+      gap: clamp(44px, 6vw, 112px);
+    }
+
+    .hero h1 {
+      max-width: 860px;
+    }
+
+    .hero-lead {
+      max-width: 760px;
+    }
+
+    .hero-panel {
+      width: 100%;
+      min-width: 0;
+      min-height: clamp(480px, 40vw, 650px);
+    }
+
+    section {
+      padding: clamp(88px, 8vw, 124px) 0;
+    }
+
+    .section-title {
+      max-width: 920px;
+    }
+
+    .section-copy {
+      max-width: 820px;
+    }
+
+    .section-head {
+      gap: clamp(28px, 5vw, 78px);
+      margin-bottom: clamp(42px, 5vw, 64px);
+    }
+
+    .section-head .section-copy {
+      max-width: 620px;
+    }
+
+    .about-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(420px, 0.82fr);
+      gap: clamp(52px, 6vw, 110px);
+    }
+
+    .portfolio-grid {
+      gap: clamp(18px, 2vw, 28px);
+    }
+
+    .venture-card,
+    .contact-panel,
+    .product-marquee,
+    .hero-panel,
+    .partner-form-wrap,
+    .metrics {
+      max-width: 100%;
+    }
+
+    .venture-card,
+    .contact-panel,
+    .product-marquee,
+    .hero-panel {
+      overflow: hidden;
+    }
+
+    .venture-card {
+      min-width: 0;
+    }
+
+    .apps-grid {
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: clamp(14px, 1.8vw, 22px);
+    }
+
+    .contact-panel {
+      width: 100%;
+      padding: clamp(36px, 5vw, 72px);
+    }
+
+    .partner-form {
+      max-width: 1180px;
+    }
+
+    @media (min-width: 1800px) {
+      :root {
+        --shell-max: 1680px;
+      }
+    }
+
+    @media (max-width: 1180px) {
+      :root {
+        --shell-pad: clamp(18px, 3.5vw, 48px);
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 44px;
+      }
+
+      .hero-panel {
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav-links.open {
+        left: 16px;
+        right: 16px;
+        max-width: calc(100vw - 32px);
+      }
+    }
+
+    @media (max-width: 720px) {
+      :root {
+        --shell-pad: 16px;
+      }
+
+      .container {
+        width: min(100% - 32px, var(--shell-max)) !important;
+      }
+
+      .portfolio-grid,
+      .principles-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .venture-card.featured {
+        grid-column: auto;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head .section-copy {
+        margin-top: 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand,
+      .brand-copy {
+        min-width: 0;
+      }
+
+      .brand-name,
+      .brand-sub {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .hero h1 {
+        max-width: 100%;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
